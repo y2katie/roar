@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div class="ui secondary menu topMenu">
     <div class='item'>
-      <img src= {roar} />
+      <img className="logo" src= {roar} />
     </div>
 
     <div class="right menu">

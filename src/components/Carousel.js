@@ -1,5 +1,6 @@
 import React from "react";
 import AliceCarousel from 'react-alice-carousel';
+import Navbar from "./Navbar"
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 const items = [
@@ -12,6 +13,8 @@ const items = [
 
 const Carousel = () => (
   <div>
+  <Navbar />
+
       <AliceCarousel
              autoPlay = "none"
              autoPlayControls="hidden"
