@@ -1,25 +1,14 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const Copy = () => (
-  <Card>
-    <Image src='/images/avatar/large/matthew.png' wrapped ui={false} />
-    <Card.Content>
-      <Card.Header>Matthew</Card.Header>
-      <Card.Meta>
-        <span className='date'>Joined in 2015</span>
-      </Card.Meta>
-      <Card.Description>
-        Matthew is a musician living in Nashville.
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
-    </Card.Content>
-  </Card>
-)
+const Copy = (props) => {
+  return (
+    <div className="copy">
+      <h5> {props.smallHeader} </h5>
+      <h1> {props.headLine} </h1>
+      <p> {props.body} </p>
+    </div>
+  )
+}
 
 export default Copy
