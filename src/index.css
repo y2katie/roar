@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,800;1,400&family=Roboto+Slab:wght@100;400&display=swap');
 
 body {
   margin: 0;
@@ -16,6 +16,14 @@ font-family: 'Montserrat', sans-serif !important;
   background-color: black !important;
 }
 
+.smallHeader {
+  font-size:14px;
+  font-weight:800 !important;
+  letter-spacing: 3.36px;
+  text-transform: uppercase;
+  color:#DAF7DC ;
+}
+
 .frames {
   font-family: sans-serif;
   text-align: center;
@@ -23,7 +31,6 @@ font-family: 'Montserrat', sans-serif !important;
   height: 100vh;
   display: flex;
   place-content: center;
-  color:yellow !important;
   place-items: center;
   background-color: rgba(0, 85, 255, 1) !important;
   margin: 0;
@@ -31,10 +38,37 @@ font-family: 'Montserrat', sans-serif !important;
   perspective: 1000px;
 }
 
+.logo {
+  width:20%;
+}
+
+.headLine {
+  font-size:65px !important;
+}
 
 .testing {
   position: absolute;
-z-index: -1;
-top: 0;
-left: 0;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.copy {
+  margin: 0;
+  position: absolute;
+  width:65%;
+  top: 50%;
+  left: 50%;
+  padding:40px;
+  color:white;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.topMenu {
+  padding:20px;
+}
+
+.ui.secondary.menu .item{
+  color:white !important;
 }

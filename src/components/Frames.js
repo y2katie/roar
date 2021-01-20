@@ -40,7 +40,7 @@ const Frames = () => {
         smallHeader= "FOR COMPANIES WITH RECURRING REVENUE"
         headLine= "Get paid by the year, charge by the year"
         body = "Stop pushing your customers into discounted annual subscriptions. Your subscriptions are an asset, trade them like one."
-        cta = "Learn More"
+        cta = "Learn More1"
         />
         <ParticlesBg config={config} backgroundColor="black" type="circle" num={15} bg={true} className="testing"/>
       </div>
