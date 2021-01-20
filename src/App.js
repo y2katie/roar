@@ -1,7 +1,7 @@
 import React from "react"
 import {Route, Switch} from "react-router-dom"
-import Jumbotron from "./components/Jumbotron"
-import { MotionLayoutProvider } from 'react-motion-layout';
+import Frames from "./components/Frames"
+import Carousel from "./components/Carousel"
 
 import './App.css';
 
@@ -10,8 +10,8 @@ class App extends React.Component {
     return (
       <div className="App">
       <Switch>
-        <Route path='/' exact component={Jumbotron} />
-
+        <Route path='/' exact component={Frames} />
+        <Route path='/carousel' component={Carousel} />
       </Switch>
       </div>
     );

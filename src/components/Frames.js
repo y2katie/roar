@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React from "react";
 import ParticlesBg from "particles-bg";
 import Copy from "./Copy";
+import Navbar from "./Navbar";
 
 
 const Frames = () => {
@@ -35,10 +35,12 @@ const Frames = () => {
 
     return (
       <div>
+      <Navbar />
       <Copy
-        smallHeader= "hi"
-        headLine= "ok trying this"
-        body =" are you working?"
+        smallHeader= "FOR COMPANIES WITH RECURRING REVENUE"
+        headLine= "Get paid by the year, charge by the year"
+        body = "Stop pushing your customers into discounted annual subscriptions. Your subscriptions are an asset, trade them like one."
+        cta = "Learn More"
         />
         <ParticlesBg config={config} backgroundColor="black" type="circle" num={15} bg={true} className="testing"/>
       </div>

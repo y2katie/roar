@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
 
 const Copy = (props) => {
   return (
@@ -7,6 +6,7 @@ const Copy = (props) => {
       <h5> {props.smallHeader} </h5>
       <h1> {props.headLine} </h1>
       <p> {props.body} </p>
+      <button> {props.cta} </button>
     </div>
   )
 }
