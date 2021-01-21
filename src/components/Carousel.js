@@ -1,6 +1,9 @@
 import React from "react";
 import AliceCarousel from 'react-alice-carousel';
 import Navbar from "./Navbar"
+import CopyLeftImage from "./CopyLeftImage"
+import CopyRightImage from "./CopyRightImage"
+
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 const items = [
@@ -13,22 +16,30 @@ const items = [
 
 const Carousel = () => (
   <div>
-  <Navbar />
-
-      <AliceCarousel
-             autoPlay = "none"
-             autoPlayControls="hidden"
-             autoPlayStrategy="none"
-             animationType="fadeout"
-             autoPlayInterval={2500}
-             animationDuration={1000}
-             infinite
-             touchTracking={false}
-             disableDotsControls
-             disableButtonsControls
-             items={items}
-         />
-     </div>
+    <Navbar />
+    <AliceCarousel
+     autoPlay = "none"
+     autoPlayControls="hidden"
+     autoPlayStrategy="none"
+     animationType="fadeout"
+     autoPlayInterval={2500}
+     animationDuration={1000}
+     infinite
+     touchTracking={false}
+     disableDotsControls
+     disableButtonsControls
+     items={items} />
+   <CopyLeftImage
+     header="Delivery Optimizations"
+     followUp="Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!"
+     sellingPointImage = "https://images.pexels.com/photos/3119736/pexels-photo-3119736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    />
+  <CopyRightImage
+    header="Delivery Optimizations"
+    followUp="Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!"
+    sellingPointImage = "https://images.pexels.com/photos/3119736/pexels-photo-3119736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+   />
+   </div>
 )
 
 

@@ -72,3 +72,23 @@ font-family: 'Montserrat', sans-serif !important;
 .ui.secondary.menu .item{
   color:white !important;
 }
+
+.copyimage {
+  padding:30px !important;
+}
+
+.header {
+  color:white;
+  text-align:left;
+  font-size:60px;
+  padding:20px;
+}
+
+.followUp {
+  color:white;
+  text-align:left;
+  padding:20px;
+  letter-spacing: 3px;
+  line-height:25px;
+
+}

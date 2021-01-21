@@ -1,24 +1,26 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Link }  from "react-router-dom"
 import roar from "../assets/images/roar.png"
 
 const Navbar = () => {
   return (
     <div class="ui secondary menu topMenu">
-    <div class='item'>
-      <img className="logo" src= {roar} />
-    </div>
+    <Link to= "/" class='item'>
+      <img className="logo" src= {roar} alt="logo" />
+    </Link>
 
     <div class="right menu">
-    <a class="item">
+    <Link to="/" class="item">
       Home
-    </a>
-    <a class="item">
-      Messages
-    </a>
-    <a class="item">
-      Friends
-    </a>
+    </Link>
+    <Link to="/carousel" class="item">
+      Carousel
+    </Link>
+    <Link to="/copy" class="item">
+      Copy
+    </Link>
+
+
     <div class="item">
       <div class="ui animated button" tabindex="0">
         <div class="visible content"> Learn More </div>
@@ -32,5 +34,6 @@ const Navbar = () => {
 
   )
 }
+
 
 export default Navbar
