@@ -92,3 +92,9 @@ font-family: 'Montserrat', sans-serif !important;
   line-height:25px;
 
 }
+
+.multiple {
+  padding:20px;
+  height:400px;
+  border:1px solid white;
+}

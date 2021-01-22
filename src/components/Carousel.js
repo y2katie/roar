@@ -6,29 +6,31 @@ import CopyRightImage from "./CopyRightImage"
 
 import 'react-alice-carousel/lib/alice-carousel.css';
 
+const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+};
+
 const items = [
-    <div className="item" data-value="1" ><img src="https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2020-06/gluten-free-whole-grain-scones.jpg?itok=fq0X_1Zo" alt="cookies"/></div>,
-    <div className="item" data-value="2"><img src="https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/recipe_legacy/6079-3-large.jpg?itok=VWwKm7jt" alt="cake"/></div>,
-    <div className="item" data-value="3" ><img src="https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2020-12/cinnamon-star-bread-10_0917.jpg?itok=Q3oxjr29" alt="yum"/></div>,
-    <div className="item" data-value="4" ><img src="https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2020-06/gluten-free-whole-grain-scones.jpg?itok=fq0X_1Zo" alt="cookies"/></div>,
-    <div className="item" data-value="5" ><img src="https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/recipe_legacy/6079-3-large.jpg?itok=VWwKm7jt" alt="cookies"/></div>,
+    <div className="item multiple"  data-value="1"><h1 style={{color:"white"}}> KATIE </h1> </div>,
+    <div className="item multiple"  data-value="2"><h1 style={{color:"blue"}}> KATIE </h1></div>,
+    <div className="item multiple"  data-value="3"><h1 style={{color:"green"}}> KATIE </h1></div>,
+    <div className="item multiple"  data-value="4"><h1 style={{color:"yellow"}}> KATIE </h1></div>,
+    <div className="item multiple"  data-value="5"><h1 style={{color:"red"}}> KATIE </h1></div>,
 ];
+
 
 const Carousel = () => (
   <div>
     <Navbar />
     <AliceCarousel
-     autoPlay = "none"
-     autoPlayControls="hidden"
-     autoPlayStrategy="none"
-     animationType="fadeout"
-     autoPlayInterval={2500}
-     animationDuration={1000}
-     infinite
-     touchTracking={false}
-     disableDotsControls
-     disableButtonsControls
-     items={items} />
+        autoPlay
+        mouseTracking
+        autoPlayInterval={3000}
+        items={items}
+        responsive={responsive}
+    />
    <CopyLeftImage
      header="Delivery Optimizations"
      followUp="Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!"
