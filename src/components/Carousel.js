@@ -9,15 +9,47 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 const responsive = {
     0: { items: 1 },
     568: { items: 2 },
-    1024: { items: 3 },
+    1024: { items: 4 },
 };
 
 const items = [
-    <div className="item multiple"  data-value="1"><h1 style={{color:"white"}}> KATIE </h1> </div>,
-    <div className="item multiple"  data-value="2"><h1 style={{color:"blue"}}> KATIE </h1></div>,
-    <div className="item multiple"  data-value="3"><h1 style={{color:"green"}}> KATIE </h1></div>,
-    <div className="item multiple"  data-value="4"><h1 style={{color:"yellow"}}> KATIE </h1></div>,
-    <div className="item multiple"  data-value="5"><h1 style={{color:"red"}}> KATIE </h1></div>,
+    <div className="item multiple" data-value="1">
+      <h2 style={{color:"white"}}>
+        KATIE
+      </h2>
+      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>,
+    <div className="item multiple" data-value="2">
+      <h2 style={{color:"blue"}}>
+        KATIE
+      </h2>
+      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>,
+    <div className="item multiple" data-value="3">
+      <h2 style={{color:"red"}}>
+        KATIE
+      </h2>
+      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>,
+    <div className="item multiple" data-value="4">
+      <h2 style={{color:"yellow"}}>
+        KATIE
+      </h2>
+      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>,
+
+    <div className="item multiple" data-value="5">
+      <h2 style={{color:"orange"}}>
+        KATIE
+      </h2>
+      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>,
+    <div className="item multiple" data-value="6">
+      <h2 style={{color:"purple"}}>
+        KATIE
+      </h2>
+      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>
 ];
 
 
