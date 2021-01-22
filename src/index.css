@@ -108,3 +108,34 @@ font-family: 'Montserrat', sans-serif !important;
 .alice-carousel__prev-btn, .alice-carousel__next-btn {
   width: auto !important;
 }
+
+.faqHeader {
+  font-size:60px;
+  text-align:left;
+  color:#DAF7DC;
+  border-top:1px solid white;
+}
+
+.ui.styled.accordion, .ui.styled.accordion .accordion {
+  background-color: black;
+}
+
+
+.ui.accordion .accordion .active.content, .ui.accordion .active.content, .ui.styled.accordion .accordion .content, .ui.styled.accordion .content {
+  color:white !important;
+  text-align:left;
+}
+
+.ui.styled.accordion {
+  width:60% !important;
+  margin: 0 auto !important;
+}
+
+.ui.styled.accordion .active.title {
+  color:white;
+  text-align:left;
+}
+
+.ui.accordion .accordion .title .dropdown.icon, .ui.accordion .title .dropdown.icon {
+  color:white;
+}

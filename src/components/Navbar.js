@@ -16,8 +16,8 @@ const Navbar = () => {
     <Link to="/carousel" class="item">
       Carousel
     </Link>
-    <Link to="/copy" class="item">
-      Copy
+    <Link to="/faq" class="item">
+      FAQ
     </Link>
 
 
