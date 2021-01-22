@@ -98,9 +98,11 @@ font-family: 'Montserrat', sans-serif !important;
 }
 
 .multiple {
-  padding:50px 40px 30px;
+  padding: 100px 40px 100px 40px;
   border-radius:10px !important;
-  border:1px solid white;
+  border-color:rgba(8,72,114,.05);
+  background-color: #181818;
+  box-shadow: 0 10px 30px 0 #050505;
 }
 
 .alice-carousel__prev-btn, .alice-carousel__next-btn {

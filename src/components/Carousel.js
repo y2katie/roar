@@ -56,6 +56,7 @@ const items = [
 const Carousel = () => (
   <div>
     <Navbar />
+    <h1 style={{color:"purple", fontSize:"70px"}}> Loved by industry leaders </h1>
     <AliceCarousel
         autoPlay
         mouseTracking
