@@ -37,10 +37,10 @@ const Frames = () => {
       <div>
       <Navbar />
       <Copy
-        smallHeader= "FOR COMPANIES WITH RECURRING REVENUE"
-        headLine= "Get paid by the year, charge by the year"
-        body = "Stop pushing your customers into discounted annual subscriptions. Your subscriptions are an asset, trade them like one."
-        cta = "Learn More1"
+        smallHeader=  "when it comes to building wealth, investing is how you do it"
+        headLine= "The Topic of Investing Can be Intimidating."
+        body = "Complex financial terms, market swings and varying opinions from friends, family, and on social media can make anyone shy away from creating an investment portfolio."
+        cta = "Learn More"
         />
         <ParticlesBg config={config} backgroundColor="black" type="circle" num={15} bg={true} className="testing"/>
       </div>

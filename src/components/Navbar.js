@@ -19,6 +19,9 @@ const Navbar = () => {
     <Link to="/faq" class="item">
       FAQ
     </Link>
+    <Link to="/results" class="item">
+      Results
+    </Link>
 
 
     <div class="item">
