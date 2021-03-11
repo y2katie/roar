@@ -6,18 +6,19 @@ import {
   Container,
   TextArea,
   Form,
-  Search,
+  Input,
 } from "semantic-ui-react";
+
+
 class SearchBox extends React.Component {
 
   state = {
-    stock: "",
+    stock: ""
   };
 
   handleChange = (event) => {
     console.log(event.target.value);
-
-    this.setState({ stock: event.target.value });
+    this.setState({ stock: event.target.value.toUpperCase() });
   };
 
   onFormSubmit = (event) => {
@@ -34,24 +35,16 @@ class SearchBox extends React.Component {
               style={{textTransform:"uppercase"}}
           style={{ textAlign: "center", marginTop: "30px" }}
         >
-          <Search
+          <Input
+            size='large'
             type="text"
+            icon='search'
             onSearchChange={this.handleChange}
             value={this.state.stock}
             style={{textTransform:"uppercase"}}
             onChange={(e) => this.setState({ stock: e.target.value })}
           />
-          <TextArea
-            type="text"
-            input="Submit"
-            size="large"
-            style={{textTransform:"uppercase"}}
-            placeholder="AAPL"
-            value={this.state.stock}
-            onChange={(e) => this.setState({ stock: e.target.value })}
-            label="Getting rich?"
-            variant="outlined"
-          />
+
         </Form>
       </>
     );

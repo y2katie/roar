@@ -10,6 +10,7 @@ const Copy = (props) => {
         <div class="visible content"> {props.cta} </div>
           <div class="hidden content">
             <i class="right arrow icon"></i>
+            {props.cta}
           </div>
       </div>
     </div>
