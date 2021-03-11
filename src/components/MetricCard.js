@@ -8,6 +8,7 @@ import { Container, Header, Table, Rating } from 'semantic-ui-react'
 
     return (
       <Container>
+      <h1 style={{color:"White", textAlign:"left"}}>Financials </h1>
       <Table celled padded>
     <Table.Header>
       <Table.Row>

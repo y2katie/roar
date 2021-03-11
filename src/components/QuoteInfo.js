@@ -1,36 +1,29 @@
 import React from "react";
 import {Container, Button, Card, Image } from 'semantic-ui-react'
 
-  const QuoteInfo = ({quote, onStockSelect}) => {
-    if (!quote) {
+  const trendsInfo = ({trends, onStockSelect}) => {
+    if (!trends) {
       return null
     }
-console.log(quote);
+
+    const list = trends.map( (trend) => {
+      return (
+        <Card>
+          <Card.Content header='About Amy' />
+          <Card.Content description={trend.buy} />
+          <Card.Content extra>
+          
+          </Card.Content>
+        </Card>
+      )
+    })
+
+
     return (
-      <Container style={{marginBottom:"20px"}}>
-      <Card >
-         <Card.Content>
-
-           <Card.Header>High{quote.h} </Card.Header>
-           <Card.Meta>Close {quote.c}</Card.Meta>
-           <Card.Description>
-            {quote.o}
-           </Card.Description>
-         </Card.Content>
-         <Card.Content extra>
-           <div className='ui two buttons'>
-             <Button basic color='green'>
-             {quote.c}
-             </Button>
-             <Button basic color='red'>
-             {quote.h}
-             </Button>
-           </div>
-         </Card.Content>
-       </Card>
-       </Container>
-
+      <Container>
+     {list}
+     </Container>
     )
   }
 
-  export default QuoteInfo
+  export default trendsInfo

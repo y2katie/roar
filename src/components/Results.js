@@ -1,64 +1,93 @@
 import React from "react";
 import SearchBox from "./SearchBox";
-import Stockcard from "./StockCard"
-import StockNews from "./StockNews"
-import QuoteInfo from "./QuoteInfo"
+import Stockcard from "./StockCard";
+import StockNews from "./StockNews";
+import QuoteInfo from "./QuoteInfo";
 
-import MetricCard from "./MetricCard"
+import MetricCard from "./MetricCard";
 
 import Navbar from "./Navbar";
 import axios from "axios";
-import { Button, Card, Image } from "semantic-ui-react";
+import { Button, Card, Image, Placeholder, Segment } from "semantic-ui-react";
 
 class Results extends React.Component {
   state = {
     stockProfile: "",
-    metricList:"",
+    metricList: "",
     selectedStock: null,
-    news:[],
-    quote:""
+    news: [],
+    peers: [],
+    trends: [],
+    loading:false
   };
 
+  handleLoadingClick = () => {
+    this.setState({ loading: true })
 
-  onSearchSubmit = async (stock) => {
-    await axios.get(
-        `https://finnhub.io/api/v1/stock/profile2?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
-    ).then( (res) => {
-      this.setState({ stockProfile: res.data});
-    });
-  };
+    setTimeout(() => {
+      this.setState({ loading: false })
+    }, 7000)
+  }
 
-  onStockSelect = async (symbol) => {
+
+  onStockSelect = async (stock, symbol) => {
+    console.log(stock);
     await Promise.all([
       axios.get(
-        `https://finnhub.io/api/v1/quote?symbol=${symbol.ticker}&${process.env.REACT_APP_API_KEY}`
+        `https://finnhub.io/api/v1/stock/profile2?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
       ),
       axios.get(
-        `https://finnhub.io/api/v1/stock/metric?symbol=${symbol.ticker}&metric=all&${process.env.REACT_APP_API_KEY}`
+        `https://finnhub.io/api/v1/stock/recommendation?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
       ),
       axios.get(
-        `https://finnhub.io/api/v1/company-news?symbol=${symbol.ticker}&from=2020-04-30&to=2020-05-01&${process.env.REACT_APP_API_KEY}`
-
+        `https://finnhub.io/api/v1/stock/metric?symbol=${stock}&metric=all&${process.env.REACT_APP_API_KEY}`
       ),
-    ]).then(([res1, res2, res3]) => {
+      axios.get(
+        `https://finnhub.io/api/v1/company-news?symbol=${stock}&from=2020-04-30&to=2020-05-01&${process.env.REACT_APP_API_KEY}`
+      ),
+      axios.get(
+        `https://finnhub.io/api/v1/stock/peers?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
+      ),
+    ]).then(([res, res1, res2, res3, res4]) => {
+      console.log(res.data);
       console.log(res1.data);
       console.log(res2.data);
       console.log(res3.data);
-      this.setState({quote:res1.data, selectedStock: res2.data.metric, news: res3.data.slice(0,6) });
+      console.log(res4.data);
+      this.setState({
+        stockProfile: res.data,
+        trends: res1.data.slice(0, 1),
+        selectedStock: res2.data.metric,
+        news: res3.data.slice(0, 6),
+        peers: res4.data,
+      });
     });
   };
 
-
-
   render() {
+    const { loading } = this.state
+
     return (
       <>
         <Navbar />
-        <SearchBox onSubmit={this.onSearchSubmit} />
-        <Stockcard stockProfile = {this.state.stockProfile} onStockSelect={this.onStockSelect} />
-        <MetricCard selectedStock={this.state.selectedStock} onStockSelect={this.onStockSelect} />
+        <SearchBox onSubmit={this.onStockSelect} loading={loading} onClick={this.handleLoadingClick}/>
+        <h1 style={{ color: "white" }}>{this.state.trends.hold} </h1>
+
+
+
+        <Stockcard
+          stockProfile={this.state.stockProfile}
+          trends={this.state.trends}
+          peers={this.state.peers}
+          onStockSelect={this.onStockSelect}
+        />
+
+        <MetricCard
+          selectedStock={this.state.selectedStock}
+          onStockSelect={this.onStockSelect}
+        />
+
         <StockNews news={this.state.news} onStockSelect={this.onStockSelect} />
-        <QuoteInfo quote={this.state.quote} onStockSelect={this.onStockSelect} />
       </>
     );
   }
