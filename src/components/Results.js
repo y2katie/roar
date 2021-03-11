@@ -2,13 +2,11 @@ import React from "react";
 import SearchBox from "./SearchBox";
 import Stockcard from "./StockCard";
 import StockNews from "./StockNews";
-import QuoteInfo from "./QuoteInfo";
 
 import MetricCard from "./MetricCard";
 
 import Navbar from "./Navbar";
 import axios from "axios";
-import { Button, Card, Image, Placeholder, Segment } from "semantic-ui-react";
 
 class Results extends React.Component {
   state = {

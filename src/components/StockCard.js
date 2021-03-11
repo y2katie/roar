@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Card, Grid, Image, Placeholder } from "semantic-ui-react";
+import { Container, Button, Card, Grid, Image } from "semantic-ui-react";
 
 const StockCard = ({ stockProfile, trends, peers, onStockSelect }) => {
   if (!stockProfile && !trends) {

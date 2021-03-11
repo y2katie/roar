@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header, Table, Rating } from 'semantic-ui-react'
+import { Container, Header, Table } from 'semantic-ui-react'
 
   const MetricCard = ({selectedStock}) => {
     if (!selectedStock) {

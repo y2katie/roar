@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid,Button, Card, Image, Container } from 'semantic-ui-react'
+import { Grid, Container } from 'semantic-ui-react'
 import NewsCard from './NewsCard'
 
 

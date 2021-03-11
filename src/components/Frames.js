@@ -5,7 +5,7 @@ import Results from "./Results";
 
 import Navbar from "./Navbar";
 import { Link }  from "react-router-dom"
-import { Route, Switch }  from "react-router-dom"
+import { Route }  from "react-router-dom"
 
 
 const Frames = () => {
