@@ -2,6 +2,11 @@ import React from "react";
 import SearchBox from "./SearchBox";
 import Stockcard from "./StockCard";
 import StockNews from "./StockNews";
+import Test from "./Test";
+import Peers from "./Peers";
+
+import Statistic from "./Statistic";
+import DividerExampleHorizontalTable from "./Divider"
 
 import MetricCard from "./MetricCard";
 
@@ -16,17 +21,56 @@ class Results extends React.Component {
     news: [],
     peers: [],
     trends: [],
-    loading:false
+    loading: false,
+    stockNames: [],
+    prices:[]
   };
 
   handleLoadingClick = () => {
-    this.setState({ loading: true })
+    this.setState({ loading: true });
 
     setTimeout(() => {
-      this.setState({ loading: false })
-    }, 7000)
-  }
+      this.setState({ loading: false });
+    }, 7000);
+  };
 
+  // componentDidMount() {
+  //     axios.get(
+  //       "http://api.marketstack.com/v1/tickers?access_key=184f7ceece4bd92b84e52fbc29614190"
+  //     )
+  //     .then( (res)  => {
+  //     let names = res.data.data;
+  //     this.setState({ stockNames:names.slice(0,1) });
+  //   });
+  //
+  //   if(this.state.stockNames === null) {
+  //     return null
+  //
+  //   }
+  //
+  //   else {
+  //     axios.get(
+  //       "http://api.marketstack.com/v1/eod?access_key=184f7ceece4bd92b84e52fbc29614190&symbols=" + this.state.stockNames
+  //     )
+  //     .then( (response) => {
+  //       console.log(response.data)
+  //       this.setState({prices: response.data})
+  //     })
+  //   }
+  // }
+
+  // async componentDidMount(){
+  //   const resp1 = await axios.get("http://api.marketstack.com/v1/tickers?access_key=184f7ceece4bd92b84e52fbc29614190")
+  //   const names = resp1.data.data.slice(0,1)
+  //
+  //   if(!names) return;
+  //
+  //   this.setState({stockNames: names[0].name})
+  //
+  //   const res2 = axios.get(`http://api.marketstack.com/v1/eod?access_key=184f7ceece4bd92b84e52fbc29614190&symbols=aapl`)
+  //     console.log(res2.data)
+  //     this.setState({prices:res2})
+  // }
 
   onStockSelect = async (stock, symbol) => {
     console.log(stock);
@@ -63,16 +107,19 @@ class Results extends React.Component {
   };
 
   render() {
-    const { loading } = this.state
+    const { loading } = this.state;
 
     return (
       <>
         <Navbar />
-        <SearchBox onSubmit={this.onStockSelect} loading={loading} onClick={this.handleLoadingClick}/>
-        <h1 style={{ color: "white" }}>{this.state.trends.hold} </h1>
-
-
-
+        <SearchBox
+          onSubmit={this.onStockSelect}
+          loading={loading}
+          onClick={this.handleLoadingClick}
+        />
+      <Statistic />
+            <Peers peers={this.state.peers} />
+      <DividerExampleHorizontalTable />
         <Stockcard
           stockProfile={this.state.stockProfile}
           trends={this.state.trends}

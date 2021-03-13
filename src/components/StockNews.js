@@ -4,8 +4,8 @@ import NewsCard from './NewsCard'
 
 
   const StockNews = ({news}) => {
-    if (!news) {
-      return null
+    if (news.length === 0) {
+      return null;
     }
 
     const renderedList = news.map((news) => {
