@@ -1,8 +1,13 @@
 import React from 'react'
 import { Divider, Header, Icon, Table, Container } from 'semantic-ui-react'
 
-const DividerExampleHorizontalTable = () => (
-  <>
+const DividerExampleHorizontalTable = ({stockProfile}) => {
+  if(!stockProfile) {
+    return null
+  }
+
+  return(
+
   <Container>
     <Divider horizontal>
       <Header as='h4'>
@@ -12,6 +17,7 @@ const DividerExampleHorizontalTable = () => (
     </Divider>
 
     <p>
+    {stockProfile.name}
       Doggie treats are good for all times of the year. Proven to be eaten by
       99.9% of all dogs worldwide.
     </p>
@@ -44,7 +50,8 @@ const DividerExampleHorizontalTable = () => (
       </Table.Body>
     </Table>
     </Container>
-  </>
+
 )
+}
 
 export default DividerExampleHorizontalTable

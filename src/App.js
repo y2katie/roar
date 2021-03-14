@@ -7,10 +7,6 @@ import Results from "./components/Results"
 
 
 
-
-
-import './App.css';
-
 class App extends React.Component {
   render() {
     return (

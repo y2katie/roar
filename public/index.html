@@ -25,7 +25,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Roar - Noise Complaint Solutions</title>
+    <title>Financial Enlightenment</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -41,4 +41,21 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+  const socket = new WebSocket('wss://ws.finnhub.io?token=c13rrff48v6r3f6kt4a0');
+
+
+
+    socket.addEventListener('open', function (event) {
+        socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'AAPL'}))
+        socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'BINANCE:BTCUSDT'}))
+        socket.send(JSON.stringify({'type':'subscribe', 'symbol': 'IC MARKETS:1'}))
+    });
+
+    // Listen for messages
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server ', event.data);
+    });
+  }
+  </script>
 </html>

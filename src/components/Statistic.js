@@ -1,37 +1,75 @@
-import React from 'react'
-import { Icon, Image, Statistic } from 'semantic-ui-react'
+import React from "react";
+import { Icon, Image, Statistic, Rail, Sticky, Container,Divider,Header } from "semantic-ui-react";
 
-const StatisticExampleEvenlyDivided = () => (
-  <Statistic.Group widths='four'>
-    <Statistic>
-      <Statistic.Value>22</Statistic.Value>
-      <Statistic.Label>Saves</Statistic.Label>
-    </Statistic>
+const StatisticExampleEvenlyDivided = ({ trends,stockProfile }) => {
+  console.log(trends);
+  if (!trends || !stockProfile) {
+    return <div style={{ display: "none" }}> </div>;
+  }
 
-    <Statistic>
-      <Statistic.Value text>
-        Three
-        <br />
-        Thousand
-      </Statistic.Value>
-      <Statistic.Label>Signups</Statistic.Label>
-    </Statistic>
+  return (
 
-    <Statistic>
-      <Statistic.Value>
-        <Icon name='plane' />5
-      </Statistic.Value>
-      <Statistic.Label>Flights</Statistic.Label>
-    </Statistic>
+<Container>
+    <Divider horizontal>
+      <Header as='h4'>
+        <Icon name='hotjar' />
+        Trending
+      </Header>
+    </Divider>
+      <Statistic.Group widths="four">
 
-    <Statistic>
-      <Statistic.Value>
-        <Image src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' className='circular inline' />
-        42
-      </Statistic.Value>
-      <Statistic.Label>Team Members</Statistic.Label>
-    </Statistic>
-  </Statistic.Group>
-)
+      <Statistic>
+      <Statistic.Label>
+          {trends.map((trend) => {
+            return <> {trend.symbol} </>;
+          })}</Statistic.Label>
+        <Statistic.Value>
+          <Image
+            src={stockProfile.logo}
+            inline
+          />
 
-export default StatisticExampleEvenlyDivided
+        </Statistic.Value>
+
+      </Statistic>
+
+        <Statistic>
+        <Statistic.Label> Buy</Statistic.Label>
+
+          <Statistic.Value>
+            {trends.map((trend) => {
+              return <> {trend.buy} </>;
+            })}
+          </Statistic.Value>
+        </Statistic>
+
+        <Statistic>
+        <Statistic.Label>Sell</Statistic.Label>
+
+          <Statistic.Value>
+          <Icon name="send" size="tiny"/>
+          {trends.map((trend) => {
+            return <> {trend.sell} </>;
+          })}
+          </Statistic.Value>
+        </Statistic>
+
+        <Statistic>
+        <Statistic.Label>Hold</Statistic.Label>
+
+          <Statistic.Value>
+            <Icon name="send" />   {trends.map((trend) => {
+                return <> {trend.hold} </>;
+              })}
+          </Statistic.Value>
+        </Statistic>
+
+
+      </Statistic.Group>
+
+  </Container>
+
+  );
+};
+
+export default StatisticExampleEvenlyDivided;

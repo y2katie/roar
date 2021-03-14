@@ -6,21 +6,26 @@ const ListExampleDivided = ({peers}) => {
   console.log(peers);
 
   const lists = peers.map( (peer) => {
+    <h1> Peers </h1>
+
     return(
-      <List divided relaxed>
+      <>
+
+      <List relaxed horizontal centered>
         <List.Item>
           <List.Icon name='money bill alternate outline' size='large' color="white" verticalAlign='middle' />
-          <List.Content>
-            <List.Header as='a'>{peer}</List.Header>
+          <List.Content verticalAlign='middle'>
             <List.Description as='a'>{peer}</List.Description>
           </List.Content>
         </List.Item>
       </List>
+      </>
     )
   })
 
   return (
     <Container>
+    <h1> Peers: </h1> <br/>
       {lists}
     </Container>
   )

@@ -2,8 +2,11 @@ import React from "react";
 import SearchBox from "./SearchBox";
 import Stockcard from "./StockCard";
 import StockNews from "./StockNews";
+import {Rail } from 'semantic-ui-react'
+
 import Test from "./Test";
 import Peers from "./Peers";
+// import BigSearch from "./BigSearch"
 
 import Statistic from "./Statistic";
 import DividerExampleHorizontalTable from "./Divider"
@@ -17,6 +20,7 @@ class Results extends React.Component {
   state = {
     stockProfile: "",
     metricList: "",
+    quote:"",
     selectedStock: null,
     news: [],
     peers: [],
@@ -34,43 +38,6 @@ class Results extends React.Component {
     }, 7000);
   };
 
-  // componentDidMount() {
-  //     axios.get(
-  //       "http://api.marketstack.com/v1/tickers?access_key=184f7ceece4bd92b84e52fbc29614190"
-  //     )
-  //     .then( (res)  => {
-  //     let names = res.data.data;
-  //     this.setState({ stockNames:names.slice(0,1) });
-  //   });
-  //
-  //   if(this.state.stockNames === null) {
-  //     return null
-  //
-  //   }
-  //
-  //   else {
-  //     axios.get(
-  //       "http://api.marketstack.com/v1/eod?access_key=184f7ceece4bd92b84e52fbc29614190&symbols=" + this.state.stockNames
-  //     )
-  //     .then( (response) => {
-  //       console.log(response.data)
-  //       this.setState({prices: response.data})
-  //     })
-  //   }
-  // }
-
-  // async componentDidMount(){
-  //   const resp1 = await axios.get("http://api.marketstack.com/v1/tickers?access_key=184f7ceece4bd92b84e52fbc29614190")
-  //   const names = resp1.data.data.slice(0,1)
-  //
-  //   if(!names) return;
-  //
-  //   this.setState({stockNames: names[0].name})
-  //
-  //   const res2 = axios.get(`http://api.marketstack.com/v1/eod?access_key=184f7ceece4bd92b84e52fbc29614190&symbols=aapl`)
-  //     console.log(res2.data)
-  //     this.setState({prices:res2})
-  // }
 
   onStockSelect = async (stock, symbol) => {
     console.log(stock);
@@ -90,18 +57,23 @@ class Results extends React.Component {
       axios.get(
         `https://finnhub.io/api/v1/stock/peers?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
       ),
-    ]).then(([res, res1, res2, res3, res4]) => {
+      axios.get(
+        `https://finnhub.io/api/v1/quote?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
+      )
+    ]).then(([res, res1, res2, res3, res4,res5]) => {
       console.log(res.data);
       console.log(res1.data);
       console.log(res2.data);
       console.log(res3.data);
       console.log(res4.data);
+          console.log(res5.data);
       this.setState({
         stockProfile: res.data,
         trends: res1.data.slice(0, 1),
         selectedStock: res2.data.metric,
         news: res3.data.slice(0, 6),
         peers: res4.data,
+        quote:res5.data
       });
     });
   };
@@ -117,9 +89,8 @@ class Results extends React.Component {
           loading={loading}
           onClick={this.handleLoadingClick}
         />
-      <Statistic />
-            <Peers peers={this.state.peers} />
-      <DividerExampleHorizontalTable />
+
+
         <Stockcard
           stockProfile={this.state.stockProfile}
           trends={this.state.trends}
@@ -127,12 +98,20 @@ class Results extends React.Component {
           onStockSelect={this.onStockSelect}
         />
 
+        <Statistic trends={this.state.trends}
+        stockProfile={this.state.stockProfile}
+/>
+
         <MetricCard
           selectedStock={this.state.selectedStock}
           onStockSelect={this.onStockSelect}
         />
+        <Peers  peers={this.state.peers}
+/>
+
 
         <StockNews news={this.state.news} onStockSelect={this.onStockSelect} />
+
       </>
     );
   }

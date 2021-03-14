@@ -1,119 +1,100 @@
 import React from "react";
-import { Container, Column, Button, Card, Grid, Image, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Item,
+  Label,
+  Icon,
+  Column,
+  List,
+  Button,
+  Card,
+  Grid,
+  Image,
+  Form,
+  Divider,
+  Segment,
+  Sticky,
+  Rail
+} from "semantic-ui-react";
+
+const paragraph = (
+  <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
+);
 
 const StockCard = ({ stockProfile, trends, peers, onStockSelect }) => {
-  if (!stockProfile || !trends) {
+  if (!stockProfile || !trends || !peers) {
     return <div style={{ display: "none" }}> </div>;
   }
 
   return (
+<Container>
+<Segment placeholder>
+    <Grid columns={2} relaxed='very' stackable>
+      <Grid.Column>
+      <Item
+        style={{
+          backgroundColor: "white",
+          borderRadius: "10px",
+          padding: "20px",
+        }}
+      >
+        <Item.Image size="tiny" src={stockProfile.logo} />
+
+        <Item.Content>
+          <h1>{stockProfile.name}</h1>
+          <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
+          <Item.Meta>
+            <span className="cinema">
+              <a href={stockProfile.weburl}> Visit Site </a> <br />
+            </span>
+          </Item.Meta>
+          <Item.Description>
+            Sector: {stockProfile.finnhubIndustry} <br />
+            Market Cap: {stockProfile.marketCapitalization}
+          </Item.Description>
+          <Item.Extra>
+            <Label> Exchange: {stockProfile.exchange}</Label>
+            <Label icon="globe" content="Additional Languages" />
+          </Item.Extra>
+        </Item.Content>
+      </Item>
+      </Grid.Column>
+
+      <Grid.Column verticalAlign='middle'>
+      <Item
+        style={{
+          backgroundColor: "white",
+          borderRadius: "10px",
+          padding: "20px",
+        }}
+      >
+        <Item.Image size="tiny" src={stockProfile.logo} />
+
+        <Item.Content>
+          <h1>{stockProfile.name}</h1>
+          <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
+          <Item.Meta>
+            <span className="cinema">
+              <a href={stockProfile.weburl}> Visit Site </a> <br />
+            </span>
+          </Item.Meta>
+          <Item.Description>
+            Sector: {stockProfile.finnhubIndustry} <br />
+            Market Cap: {stockProfile.marketCapitalization}
+          </Item.Description>
+          <Item.Extra>
+            <Label> Exchange: {stockProfile.exchange}</Label>
+            <Label icon="globe" content="Additional Languages" />
+          </Item.Extra>
+        </Item.Content>
+      </Item>      </Grid.Column>
+    </Grid>
+
+    <Divider vertical></Divider>
+  </Segment>
 
 
-            <Card.Group center columns="equal">
-              <Card>
-                <h1 style={{ color: "black", textAlign: "left" }}>
-                  {" "}
-                  Information{" "}
-                </h1>
-
-                <Image
-                  className="centered"
-                  size="tiny"
-                  src={stockProfile.logo}
-                />
-                <br />
-                <Card.Content>
-                  <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
-
-                  <Card.Header style={{ textAlign: "center" }}>
-                    {stockProfile.name}
-                  </Card.Header>
-                  <Card.Description>
-                    Sector: {stockProfile.finnhubIndustry} <br />
-                    Exchange: {stockProfile.exchange} <br />
-                    Visit Site: {stockProfile.url} <br />
-                  </Card.Description>
-                  <Card.Content extra style={{ marginTop: "20px" }}>
-                    <div className="ui two buttons">
-                      <Button basic color="green">
-                        Market Cap: {stockProfile.marketCapitalization}
-                      </Button>
-                      <Button basic color="red">
-                        Currency: {stockProfile.currency}
-                      </Button>
-                    </div>
-                  </Card.Content>
-                </Card.Content>
-              </Card>
-
-              <Card>
-                <h1 style={{ color: "black", textAlign: "left" }}>
-                  {" "}
-                  Recommendations{" "}
-                </h1>
-
-                <Card.Content>
-                  <Image floated="right" size="mini" src={stockProfile.logo} />
-                  <Card.Header>{stockProfile.name} Recommendations</Card.Header>
-                  <Card.Meta>
-                    {" "}
-                    Period:{" "}
-                    {trends.map((trend) => {
-                      return <> {trend.period} </>;
-                    })}
-                  </Card.Meta>
-                  <Card.Description>
-                    Buy:{" "}
-                    {trends.map((trend) => {
-                      return <> {trend.buy} </>;
-                    })}
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className="ui two buttons">
-                    <Button basic color="green">
-                      Approve
-                    </Button>
-                    <Button basic color="red">
-                      Decline
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-
-              <Card>
-                PEers
-                <Card.Content>
-                  <Image
-                    floated="right"
-                    size="mini"
-                    src="/images/avatar/large/jenny.jpg"
-                  />
-                  <Card.Header>
-                    {" "}
-                    Peers:{" "}
-                    {peers.map((peer) => {
-                      return <li> {peer}</li>;
-                    })}
-                  </Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Jenny requested permission to view your contact details
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className="ui two buttons">
-                    <Button basic color="green">
-                      Approve
-                    </Button>
-                    <Button basic color="red">
-                      Decline
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-            </Card.Group>
-
+</Container>
 
 
   );

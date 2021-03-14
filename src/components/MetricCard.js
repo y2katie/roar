@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header, Table } from 'semantic-ui-react'
+import { Container, Header,Icon,Divider, Table } from 'semantic-ui-react'
 
   const MetricCard = ({selectedStock}) => {
     if (!selectedStock) {
@@ -8,8 +8,12 @@ import { Container, Header, Table } from 'semantic-ui-react'
 
     return (
       <Container>
-      <h1 style={{color:"White", textAlign:"left"}}>Financials </h1>
-      <Table celled padded>
+      <Divider horizontal>
+        <Header as='h4'>
+          <Icon name='tag' />
+          Financials
+        </Header>
+      </Divider>      <Table celled padded>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell singleLine>52 Week High</Table.HeaderCell>

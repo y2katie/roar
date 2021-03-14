@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Container } from 'semantic-ui-react'
+import { Grid, Container, Divider, Icon, Header } from 'semantic-ui-react'
 import NewsCard from './NewsCard'
 
 
@@ -18,7 +18,12 @@ import NewsCard from './NewsCard'
 
       return (
         <Container style={{marginTop:"20px"}}>
-        <h1 style={{color:"white", textAlign:"left"}}> Stories </h1>
+        <Divider horizontal>
+          <Header as='h4'>
+            <Icon name='tag' />
+            Stories
+          </Header>
+        </Divider>
 
         <Grid columns='three' divided>
         <Grid.Row>

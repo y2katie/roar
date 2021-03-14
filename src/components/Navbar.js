@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link }  from "react-router-dom"
-import roar from "../assets/images/roar.png"
+import guru from "../assets/images/guru.png"
 
 const Navbar = () => {
   return (
     <div class="ui secondary menu topMenu">
     <Link to= "/" class='item'>
-      <img className="logo" src= {roar} alt="logo" />
+      <img className="logo" src= {guru} alt="logo" />
     </Link>
 
     <div class="right menu">
