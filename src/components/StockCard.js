@@ -21,13 +21,17 @@ const paragraph = (
   <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
 );
 
-const StockCard = ({ stockProfile, trends, peers, onStockSelect }) => {
+const StockCard = ({ stockProfile, trends, peers, onStockSelect, quote }) => {
   if (!stockProfile || !trends || !peers) {
     return <div style={{ display: "none" }}> </div>;
   }
 
+console.log(quote);
   return (
 <Container>
+
+<Card.Group centered >
+</Card.Group>
 <Segment placeholder>
     <Grid columns={2} relaxed='very' stackable>
       <Grid.Column>
@@ -38,9 +42,8 @@ const StockCard = ({ stockProfile, trends, peers, onStockSelect }) => {
           padding: "20px",
         }}
       >
-        <Item.Image size="tiny" src={stockProfile.logo} />
 
-        <Item.Content>
+        <Item.Content color='green'>
           <h1>{stockProfile.name}</h1>
           <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
           <Item.Meta>
@@ -54,7 +57,6 @@ const StockCard = ({ stockProfile, trends, peers, onStockSelect }) => {
           </Item.Description>
           <Item.Extra>
             <Label> Exchange: {stockProfile.exchange}</Label>
-            <Label icon="globe" content="Additional Languages" />
           </Item.Extra>
         </Item.Content>
       </Item>
@@ -68,29 +70,25 @@ const StockCard = ({ stockProfile, trends, peers, onStockSelect }) => {
           padding: "20px",
         }}
       >
-        <Item.Image size="tiny" src={stockProfile.logo} />
 
         <Item.Content>
-          <h1>{stockProfile.name}</h1>
-          <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
-          <Item.Meta>
-            <span className="cinema">
-              <a href={stockProfile.weburl}> Visit Site </a> <br />
-            </span>
-          </Item.Meta>
+        <img src={stockProfile.logo} size="mini" />
+          <Card.Meta>Ticker: {quote.o}</Card.Meta>
+
           <Item.Description>
-            Sector: {stockProfile.finnhubIndustry} <br />
-            Market Cap: {stockProfile.marketCapitalization}
+            Open: {quote.c} <br />
+            Close: {stockProfile.marketCapitalization}
+            Open: {quote.c} <br />
+            Close: {stockProfile.marketCapitalization}
           </Item.Description>
           <Item.Extra>
-            <Label> Exchange: {stockProfile.exchange}</Label>
-            <Label icon="globe" content="Additional Languages" />
+            <Label> Currency: {stockProfile.currency}</Label>
           </Item.Extra>
         </Item.Content>
       </Item>      </Grid.Column>
     </Grid>
 
-    <Divider vertical></Divider>
+    <Divider vertical> or </Divider>
   </Segment>
 
 

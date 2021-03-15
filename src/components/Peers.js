@@ -10,8 +10,7 @@ const ListExampleDivided = ({peers}) => {
 
     return(
       <>
-
-      <List relaxed horizontal centered>
+      <List horizontal>
         <List.Item>
           <List.Icon name='money bill alternate outline' size='large' color="white" verticalAlign='middle' />
           <List.Content verticalAlign='middle'>
@@ -24,7 +23,7 @@ const ListExampleDivided = ({peers}) => {
   })
 
   return (
-    <Container>
+    <Container centered className="centered">
     <h1> Peers: </h1> <br/>
       {lists}
     </Container>

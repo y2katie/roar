@@ -20,14 +20,14 @@ class Results extends React.Component {
   state = {
     stockProfile: "",
     metricList: "",
-    quote:"",
     selectedStock: null,
     news: [],
     peers: [],
     trends: [],
     loading: false,
     stockNames: [],
-    prices:[]
+    prices:[],
+        quote:""
   };
 
   handleLoadingClick = () => {
@@ -59,6 +59,7 @@ class Results extends React.Component {
       ),
       axios.get(
         `https://finnhub.io/api/v1/quote?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
+
       )
     ]).then(([res, res1, res2, res3, res4,res5]) => {
       console.log(res.data);
@@ -95,6 +96,7 @@ class Results extends React.Component {
           stockProfile={this.state.stockProfile}
           trends={this.state.trends}
           peers={this.state.peers}
+          quote={this.state.quote}
           onStockSelect={this.onStockSelect}
         />
 

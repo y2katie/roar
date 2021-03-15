@@ -20,7 +20,7 @@ import NewsCard from './NewsCard'
         <Container style={{marginTop:"20px"}}>
         <Divider horizontal>
           <Header as='h4'>
-            <Icon name='tag' />
+            <Icon name='newspaper outline' />
             Stories
           </Header>
         </Divider>
