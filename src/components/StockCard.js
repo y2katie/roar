@@ -14,7 +14,7 @@ import {
   Divider,
   Segment,
   Sticky,
-  Rail
+  Rail,
 } from "semantic-ui-react";
 
 const paragraph = (
@@ -26,75 +26,31 @@ const StockCard = ({ stockProfile, trends, peers, onStockSelect, quote }) => {
     return <div style={{ display: "none" }}> </div>;
   }
 
-console.log(quote);
+  console.log(quote.open);
   return (
-<Container>
-
-<Card.Group centered >
-</Card.Group>
-<Segment placeholder>
-    <Grid columns={2} relaxed='very' stackable>
-      <Grid.Column>
-      <Item
-        style={{
-          backgroundColor: "white",
-          borderRadius: "10px",
-          padding: "20px",
-        }}
-      >
-
-        <Item.Content color='green'>
-          <h1>{stockProfile.name}</h1>
-          <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
-          <Item.Meta>
-            <span className="cinema">
+    <Container>
+      <Card.Group centered style={{ marginTop: "180px" }}>
+        <Card>
+          <Card.Content>
+            <img src={stockProfile.logo} size="mini" />
+            <h1>{stockProfile.name}</h1>
+            <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
+            <Card.Description>
               <a href={stockProfile.weburl}> Visit Site </a> <br />
-            </span>
-          </Item.Meta>
-          <Item.Description>
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+
+          <Card.Description>
             Sector: {stockProfile.finnhubIndustry} <br />
             Market Cap: {stockProfile.marketCapitalization}
-          </Item.Description>
-          <Item.Extra>
-            <Label> Exchange: {stockProfile.exchange}</Label>
-          </Item.Extra>
-        </Item.Content>
-      </Item>
-      </Grid.Column>
+          </Card.Description>
+          </Card.Content>
 
-      <Grid.Column verticalAlign='middle'>
-      <Item
-        style={{
-          backgroundColor: "white",
-          borderRadius: "10px",
-          padding: "20px",
-        }}
-      >
-
-        <Item.Content>
-        <img src={stockProfile.logo} size="mini" />
-          <Card.Meta>Ticker: {quote.o}</Card.Meta>
-
-          <Item.Description>
-            Open: {quote.c} <br />
-            Close: {stockProfile.marketCapitalization}
-            Open: {quote.c} <br />
-            Close: {stockProfile.marketCapitalization}
-          </Item.Description>
-          <Item.Extra>
-            <Label> Currency: {stockProfile.currency}</Label>
-          </Item.Extra>
-        </Item.Content>
-      </Item>      </Grid.Column>
-    </Grid>
-
-    <Divider vertical> or </Divider>
-  </Segment>
-
-
-</Container>
-
-
+        
+        </Card>
+      </Card.Group>
+    </Container>
   );
 };
 

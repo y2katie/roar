@@ -9,7 +9,9 @@ class SearchBox extends React.Component {
 
   state = {
     stock: ""
-  };
+    };
+
+
 
   handleChange = (event) => {
     console.log(event.target.value);
@@ -22,6 +24,8 @@ class SearchBox extends React.Component {
   };
 
   render() {
+
+    const {loading} = this.state
     return (
       <>
         <Form

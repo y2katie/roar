@@ -2,11 +2,11 @@ import React from "react";
 import { List, Container } from 'semantic-ui-react'
 
 const ListExampleDivided = ({peers}) => {
-  if(!peers) return;
-  console.log(peers);
+  if(!peers){
+  return <div style={{ display: "none" }}> </div>;
+}
 
   const lists = peers.map( (peer) => {
-    <h1> Peers </h1>
 
     return(
       <>
@@ -24,7 +24,6 @@ const ListExampleDivided = ({peers}) => {
 
   return (
     <Container centered className="centered">
-    <h1> Peers: </h1> <br/>
       {lists}
     </Container>
   )

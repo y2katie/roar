@@ -1,15 +1,29 @@
-import React from "react";
+import React, { Component, createRef } from "react";
+import _ from "lodash";
+
+import {
+  Grid,
+  Header,
+  Image,
+  Rail,
+  Ref,
+  Segment,
+  Sticky,
+  Container,
+  Placeholder
+} from "semantic-ui-react";
 import SearchBox from "./SearchBox";
 import Stockcard from "./StockCard";
 import StockNews from "./StockNews";
-import {Rail } from 'semantic-ui-react'
+import QuoteCard from "./QuoteCard";
+
 
 import Test from "./Test";
 import Peers from "./Peers";
 // import BigSearch from "./BigSearch"
 
 import Statistic from "./Statistic";
-import DividerExampleHorizontalTable from "./Divider"
+import DividerExampleHorizontalTable from "./Divider";
 
 import MetricCard from "./MetricCard";
 
@@ -26,17 +40,12 @@ class Results extends React.Component {
     trends: [],
     loading: false,
     stockNames: [],
-    prices:[],
-        quote:""
+    prices: [],
+    quote: "",
   };
 
-  handleLoadingClick = () => {
-    this.setState({ loading: true });
+  contextRef = createRef();
 
-    setTimeout(() => {
-      this.setState({ loading: false });
-    }, 7000);
-  };
 
 
   onStockSelect = async (stock, symbol) => {
@@ -58,63 +67,85 @@ class Results extends React.Component {
         `https://finnhub.io/api/v1/stock/peers?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
       ),
       axios.get(
-        `https://finnhub.io/api/v1/quote?symbol=${stock}&${process.env.REACT_APP_API_KEY}`
-
-      )
-    ]).then(([res, res1, res2, res3, res4,res5]) => {
+        `https://api.polygon.io/v1/open-close/${stock.toUpperCase()}/2020-10-14?unadjusted=true&${process.env.REACT_APP_POLYGON}`
+      ),
+    ]).then(([res, res1, res2, res3, res4, res5]) => {
       console.log(res.data);
       console.log(res1.data);
       console.log(res2.data);
       console.log(res3.data);
       console.log(res4.data);
-          console.log(res5.data);
+      console.log(res5.data);
       this.setState({
         stockProfile: res.data,
         trends: res1.data.slice(0, 1),
         selectedStock: res2.data.metric,
         news: res3.data.slice(0, 6),
         peers: res4.data,
-        quote:res5.data
+        quote: res5.data,
       });
     });
   };
 
   render() {
-    const { loading } = this.state;
 
     return (
-      <>
-        <Navbar />
-        <SearchBox
-          onSubmit={this.onStockSelect}
-          loading={loading}
-          onClick={this.handleLoadingClick}
-        />
+      <Container>
+        <Grid centered className="stackable" columns={2}>
+          <Grid.Column>
+            <Navbar />
+            <SearchBox
+              onSubmit={this.onStockSelect}
+              onClick={this.handleLoadingClick}
+            />
 
 
-        <Stockcard
-          stockProfile={this.state.stockProfile}
-          trends={this.state.trends}
-          peers={this.state.peers}
-          quote={this.state.quote}
-          onStockSelect={this.onStockSelect}
-        />
+            <Ref innerRef={this.contextRef}>
+              <Rail position="left">
+                <Sticky  context={this.contextRef} pushing>
+                  <Stockcard
+                    stockProfile={this.state.stockProfile}
+                    trends={this.state.trends}
+                    peers={this.state.peers}
+                    quote={this.state.quote}
+                    onStockSelect={this.onStockSelect}
+                    style={{marginTop:"20px"}}
+                  />
+                </Sticky>
+              </Rail>
+            </Ref>
 
-        <Statistic trends={this.state.trends}
-        stockProfile={this.state.stockProfile}
-/>
+            <Statistic
+              trends={this.state.trends}
+              stockProfile={this.state.stockProfile}
+            />
 
-        <MetricCard
-          selectedStock={this.state.selectedStock}
-          onStockSelect={this.onStockSelect}
-        />
-        <Peers  peers={this.state.peers}
-/>
+            <MetricCard
+              selectedStock={this.state.selectedStock}
+              onStockSelect={this.onStockSelect}
+            />
+            <Peers peers={this.state.peers} />
 
+            <StockNews
+              news={this.state.news}
+              onStockSelect={this.onStockSelect}
+            />
 
-        <StockNews news={this.state.news} onStockSelect={this.onStockSelect} />
-
-      </>
+            <Ref innerRef={this.contextRef}>
+              <Rail position="right">
+                <Sticky  context={this.contextRef} pushing>
+                <QuoteCard
+                  stockProfile={this.state.stockProfile}
+                  quote={this.state.quote}
+                  onStockSelect={this.onStockSelect}
+                  style={{marginTop:"20px"}}
+                />
+                </Sticky>
+              </Rail>
+            </Ref>
+          </Grid.Column>
+        </Grid>
+      </Container>
     );
   }
 }
