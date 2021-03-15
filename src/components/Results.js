@@ -20,7 +20,7 @@ import QuoteCard from "./QuoteCard";
 
 import Test from "./Test";
 import Peers from "./Peers";
-// import BigSearch from "./BigSearch"
+import Bigsearch from "./Bigsearch"
 
 import Statistic from "./Statistic";
 import DividerExampleHorizontalTable from "./Divider";
@@ -169,7 +169,8 @@ class Results extends React.Component {
               </Card.Group>
             )}
 
-    
+            <Bigsearch />
+
             <Statistic
               trends={this.state.trends}
               stockProfile={this.state.stockProfile}
