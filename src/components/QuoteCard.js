@@ -31,18 +31,20 @@ const QuoteCard = ({ stockProfile, onStockSelect, quote }) => {
     <Container>
       <Card.Group centered style={{ marginTop: "180px" }}>
         <Card>
-
           <Card.Content extra>
             <Item.Description>
-            <h4> Quote </h4>
+              <img src={stockProfile.logo} size="mini" />
+              <h4> Quote </h4>
               Open: ${quote.open} <br />
               Close: ${quote.close} <br />
               Volume: ${quote.volume} <br />
               Low: ${quote.low} <br />
               Afterhours: ${quote.afterHours} <br />
               PreMarket: ${quote.preMarket} <br />
+              Market Cap: {stockProfile.marketCapitalization} <br />
             </Item.Description>
             <Item.Extra>
+              <Label> Currency: {stockProfile.currency}</Label>
               <Label> Currency: {stockProfile.currency}</Label>
             </Item.Extra>
           </Card.Content>
