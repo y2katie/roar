@@ -52,6 +52,12 @@ font-family: 'Montserrat', sans-serif !important;
   left: 0;
 }
 
+.ui.divided.grid:not([class*="vertically divided"])>.column:not(.row), .ui.divided.grid:not([class*="vertically divided"])>.row>.column {
+  -webkit-box-shadow: none !important;
+
+}
+
+
 .copy {
   margin: 0;
   position: absolute;

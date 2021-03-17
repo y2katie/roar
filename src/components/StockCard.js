@@ -22,7 +22,7 @@ const paragraph = (
 );
 
 const StockCard = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) => {
-  if (!stockProfile || !companyInfo || !quote) {
+  if (!stockProfile || !companyInfo || !quote || !peers) {
     return <div style={{ display: "none" }}> </div>;
   }
 
@@ -54,8 +54,9 @@ const StockCard = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
           <Card>
             <Card.Content extra>
               <Item.Description>
-                <img src={stockProfile.logo} size="mini" />
-                <h4> Quote </h4>
+                <h1> Quote </h1>
+                <img src={stockProfile.logo} size="mini" /> <br/>
+
                 Open: ${quote.open} <br />
                 Close: ${quote.close} <br />
                 Volume: ${quote.volume} <br />
@@ -72,21 +73,23 @@ const StockCard = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
           </Card>
 
           <Card>
-            <Card.Content>
-              <h1>{stockProfile.name}</h1>
-              <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
-              <Card.Description>
-                <a href={stockProfile.weburl}> Visit Site </a> <br />
-              </Card.Description>
-            </Card.Content>
+
             <Card.Content extra>
               <Card.Description>
-                <p> {companyInfo.description} </p>
+              <h1> Peers </h1>
+              <h5>{peers.map( (peer) => {
+                return (
 
-                <Label>Industry: {companyInfo.industry} </Label>
-                <Label style={{ marginTop: "5px" }}>
-                  Sector: {companyInfo.sector}
-                </Label>
+                  <li>
+                  <Icon name='money bill alternate outline' size='large' />
+                  {peer}
+
+                  </li>
+              
+                )
+              })}</h5>
+
+
               </Card.Description>
             </Card.Content>
           </Card>

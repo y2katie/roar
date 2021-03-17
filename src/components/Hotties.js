@@ -1,6 +1,6 @@
 import React from "react";
 import HotCard from "./HotCard"
-import {Container, Button,Grid, Card, Image } from 'semantic-ui-react'
+import {Container, Button,Grid, Card, Image, Placeholder } from 'semantic-ui-react'
 
   const Hotties = ({hotties}) => {
     if (!hotties) {
@@ -23,7 +23,55 @@ import {Container, Button,Grid, Card, Image } from 'semantic-ui-react'
       <Grid columns='five' divided>
       <Grid.Row>
 
-      {list}
+
+{hotties.length > 0 ? <> {list} </> :
+<>
+<Grid.Column width={3}>
+  <Placeholder>
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+  </Placeholder>
+</Grid.Column>
+<Grid.Column width={3}>
+  <Placeholder>
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+  </Placeholder>
+</Grid.Column>
+<Grid.Column width={3}>
+  <Placeholder>
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+  </Placeholder>
+</Grid.Column>
+<Grid.Column width={3}>
+  <Placeholder>
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+  </Placeholder>
+</Grid.Column>
+<Grid.Column width={3}>
+  <Placeholder>
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+    <Placeholder.Line />
+  </Placeholder>
+</Grid.Column>
+
+          </>
+}
+
+
+
 
       </Grid.Row>
 

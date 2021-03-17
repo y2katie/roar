@@ -14,7 +14,19 @@ class SearchBox extends React.Component {
     stock: ""
     };
 
+    componentDidMount(e){
+      axios.get('https://morning-star.p.rapidapi.com/market/v2/auto-complete', {
+        params: {q:"tesla"},
+        headers: {
+            'x-rapidapi-key': `${process.env.REACT_APP_MORNING_STAR}`,
+            'x-rapidapi-host': 'morning-star.p.rapidapi.com'
+          }
+        })
+        .then( (response) => {
+        console.log(response);
 
+        })
+    }
 
   handleChange = (event) => {
     console.log(event.target.value);
@@ -33,7 +45,9 @@ class SearchBox extends React.Component {
       <>
 
         <Form
+        size="massive"
           autocomplete="off"
+          placeholder="Enter ticker here"
           onSubmit={this.onFormSubmit}
               style={{textTransform:"uppercase"}}
           style={{ textAlign: "center", marginTop: "30px" }}
@@ -41,6 +55,7 @@ class SearchBox extends React.Component {
 
           <Input
             size='large'
+            placeholder="Enter ticker here"
             type="text"
             icon='search'
             onSearchChange={this.handleChange}

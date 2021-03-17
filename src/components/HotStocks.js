@@ -23,7 +23,7 @@ class HotStocks extends React.Component {
 
   render(){
     return(
-      <Container>
+      <Container className="hotstock">
       <Grid columns='three' divided>
       <Grid.Row>
 

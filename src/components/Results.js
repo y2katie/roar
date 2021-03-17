@@ -120,7 +120,7 @@ class Results extends React.Component {
               stockProfile={this.state.stockProfile}
             />
 
-            {this.state.stockProfile ? (
+
 
                     <Stockcard
                       stockProfile={this.state.stockProfile}
@@ -131,62 +131,18 @@ class Results extends React.Component {
                       style={{ marginTop: "20px" }}
                     />
 
-            ) : (
-              <Card.Group itemsPerRow={3} style={{ marginTop: "30px" }}>
-                <Card>
-                  <Card.Content>
-                    <Placeholder>
-                      <Placeholder.Image square />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                    </Placeholder>
-                  </Card.Content>
-                </Card>
-                <Card>
-                  <Card.Content>
-                    <Placeholder>
-                      <Placeholder.Image square />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                    </Placeholder>
-                  </Card.Content>
-                </Card>
-                <Card>
-                  <Card.Content>
-                    <Placeholder>
-                      <Placeholder.Image square />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                      <Placeholder.Line />
-                    </Placeholder>
-                  </Card.Content>
-                </Card>
-              </Card.Group>
-            )}
-
 
             <MetricCard
               selectedStock={this.state.selectedStock}
               onStockSelect={this.onStockSelect}
             />
-            <Peers peers={this.state.peers} />
 
             <StockNews
               news={this.state.news}
               onStockSelect={this.onStockSelect}
             />
 
-            <QuoteCard
-              stockProfile={this.state.stockProfile}
-              quote={this.state.quote}
-              onStockSelect={this.onStockSelect}
-              style={{ marginTop: "20px" }}
-            />
+        
           </Grid.Column>
         </Grid>
       </Container>
