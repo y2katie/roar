@@ -15,6 +15,18 @@ font-family: 'Montserrat', sans-serif !important;
   color:white;
 }
 
+.ui.table .thead .th h3  {
+  color:black !important;
+}
+
+.ui.table tr td {
+  color:#FF2AC2;
+}
+
+.th h3 {
+  color:black !important;
+}
+
 .smallHeader {
   font-size:14px;
   font-weight:800 !important;
@@ -26,8 +38,13 @@ font-family: 'Montserrat', sans-serif !important;
 .testing {
   background-color: black !important;
 }
+
+.ui.table thead h3 {
+  color:black !important;
+}
+
 h1,h3 {
-  color:#FF2AC2 ;
+  color:#FF2AC2;
   font-weight:700;
 }
 
@@ -93,6 +110,8 @@ padding: 20px;
 
 .ui.animated.button {
   background-color:#FF5B5C !important;
+  -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .value {
