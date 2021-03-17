@@ -1,13 +1,12 @@
 import React from "react";
 import {
   Container,
-  Item,
   Label,
   Icon,
   Column,
   List,
   Button,
-  Card,
+  Item,
   Grid,
   Image,
   Form,
@@ -21,7 +20,7 @@ const paragraph = (
   <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
 );
 
-const StockCard = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) => {
+const StockItem = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) => {
   if (!stockProfile || !companyInfo || !quote || !peers) {
     return <div style={{ display: "none" }}> </div>;
   }
@@ -29,74 +28,37 @@ const StockCard = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
   return (
     <Container>
 
-      <Card.Group centered style={{ marginTop: "20px" }}>
-        <Card>
-          <Card.Content>
+      <Item.Group divided centered style={{ marginTop: "20px", width:"80%", margin:"0 auto" }}>
+        <Item>
+          <Item.Content>
             <h1>{stockProfile.name}</h1>
-            <Card.Meta>Ticker: {stockProfile.ticker}</Card.Meta>
-            <Card.Description>
-              <a href={stockProfile.weburl}> Visit Site </a> <br />
-            </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <Card.Description>
+             <h1> ${quote.open} </h1>
+            <Item.Description>
+            </Item.Description>
+          </Item.Content>
+          <Item.Content extra>
+            <Item.Description style={{marginLeft:"40px"}}>
+            <Item.Meta>Ticker: {stockProfile.ticker}</Item.Meta>
+            <a href={stockProfile.weburl}> Visit Site </a> <br />
+
               <p> {companyInfo.description} </p>
 
               <Label>Industry: {companyInfo.industry} </Label>
               <Label style={{ marginTop: "5px" }}>
                 Sector: {companyInfo.sector}
               </Label>
-            </Card.Description>
-          </Card.Content>
-        </Card>
+            </Item.Description>
+          </Item.Content>
+        </Item>
 
 
-          <Card>
-            <Card.Content extra>
-              <Item.Description>
-                <h1> Quote </h1>
-                <img src={stockProfile.logo} size="mini" /> <br/>
-
-                Open: ${quote.open} <br />
-                Close: ${quote.close} <br />
-                Volume: ${quote.volume} <br />
-                Low: ${quote.low} <br />
-                Afterhours: ${quote.afterHours} <br />
-                PreMarket: ${quote.preMarket} <br />
-                Market Cap: {stockProfile.marketCapitalization} <br />
-              </Item.Description>
-              <Item.Extra>
-                <Label> Currency: {stockProfile.currency}</Label>
-                <Label> Currency: {stockProfile.currency}</Label>
-              </Item.Extra>
-            </Card.Content>
-          </Card>
-
-          <Card>
-
-            <Card.Content extra>
-              <Card.Description>
-              <h1> Peers </h1>
-              <h5>{peers.map( (peer) => {
-                return (
-
-                  <li>
-                  <Icon name='money bill alternate outline' size='large' />
-                  {peer}
-
-                  </li>
-              
-                )
-              })}</h5>
 
 
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </Card.Group>
+          
+          </Item.Group>
 
       </Container>
   );
 };
 
-export default StockCard;
+export default StockItem;

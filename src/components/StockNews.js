@@ -17,7 +17,7 @@ import NewsCard from './NewsCard'
     })
 
       return (
-        <Container style={{marginTop:"20px"}}>
+        <Container stackable style={{marginTop:"20px"}}>
         <Divider horizontal>
           <Header as='h4'>
             <Icon name='newspaper outline' />
@@ -25,7 +25,7 @@ import NewsCard from './NewsCard'
           </Header>
         </Divider>
 
-        <Grid columns='three' divided>
+        <Grid columns='three' divided stackable>
         <Grid.Row>
 
 

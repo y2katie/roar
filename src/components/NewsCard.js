@@ -1,27 +1,27 @@
 import React from "react";
-import { Grid, Card, Image } from 'semantic-ui-react'
+import { Grid, Card, Image, Item } from 'semantic-ui-react'
 
   const NewsCard = ({news}) => {
     return (
       <>
-    <Grid.Column stackable>
-      <Card style={{marginTop:"20px"}}>
-         <Card.Content>
-             <Image
-               floated='right'
-               size='medium'
-               src={news.image}
-               style={{borderRadius:"10px"}}
-             />
-             <Card.Header>{news.headline} </Card.Header>
-             <Card.Meta>{news.related}</Card.Meta>
-              <Card.Meta><a href={news.url}> Read More </a> </Card.Meta>
-             <Card.Description>
-              {news.summary.slice(0,100)+ "..."}
-             </Card.Description>
-           </Card.Content>
-       </Card>
-       </Grid.Column>
+    <Item.Group stackable>
+    <Item>
+      <Item.Image floated='right'
+      size='medium'
+      src={news.image}
+      style={{borderRadius:"10px"}} />
+
+      <Item.Content>
+        <Item.Header>{news.headline}</Item.Header>
+        <Item.Meta>
+          <span className='price'>{news.related}</span>
+          <span className='stay'><a href={news.url}> Read More </a></span>
+        </Item.Meta>
+        <Item.Description>{news.summary.slice(0,500)+ "..."}</Item.Description>
+      </Item.Content>
+    </Item>
+
+       </Item.Group>
 
        </>
 )

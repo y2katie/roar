@@ -17,16 +17,16 @@ import {Container, Button,Grid, Card, Image, Placeholder } from 'semantic-ui-rea
 
 
     return (
-      <Container>
+      <Container stackable>
       <h1> Hot Stocks </h1>
 
-      <Grid columns='five' divided>
+      <Grid columns='five'stackable divided>
       <Grid.Row>
 
 
 {hotties.length > 0 ? <> {list} </> :
 <>
-<Grid.Column width={3}>
+<Grid.Column stackable width={3}>
   <Placeholder>
     <Placeholder.Line />
     <Placeholder.Line />

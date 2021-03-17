@@ -4,7 +4,7 @@ import guru from "../assets/images/guru.png"
 
 const Navbar = () => {
   return (
-    <div class="ui secondary menu topMenu">
+    <div class="ui secondary menu topMenu stackable">
     <Link to= "/" class='item'>
       <img className="logo" src= {guru} alt="logo" />
     </Link>

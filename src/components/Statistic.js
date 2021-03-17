@@ -9,16 +9,16 @@ const StatisticExampleEvenlyDivided = ({ trends,stockProfile }) => {
 
   return (
 
-<Container>
+<Container stackable>
     <Divider horizontal>
       <Header as='h4'>
         <Icon name='hotjar' />
         Trending
       </Header>
     </Divider>
-      <Statistic.Group widths="four">
+      <Statistic.Group stackable widths="four">
 
-      <Statistic>
+      <Statistic stackable>
       <Statistic.Label>
           {trends.map((trend) => {
             return <> {trend.symbol} </>;
@@ -33,7 +33,7 @@ const StatisticExampleEvenlyDivided = ({ trends,stockProfile }) => {
 
       </Statistic>
 
-        <Statistic>
+        <Statistic stackable>
         <Statistic.Label> Buy</Statistic.Label>
 
           <Statistic.Value>

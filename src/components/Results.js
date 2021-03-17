@@ -108,7 +108,7 @@ class Results extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container stackable>
         <Grid centered className="stackable" >
           <Grid.Column>
             <Navbar />
@@ -119,6 +119,8 @@ class Results extends React.Component {
               trends={this.state.trends}
               stockProfile={this.state.stockProfile}
             />
+
+
 
 
 
@@ -142,7 +144,12 @@ class Results extends React.Component {
               onStockSelect={this.onStockSelect}
             />
 
-        
+            <QuoteCard
+            onStockSelect={this.onStockSelect}
+            quote={this.state.trends} />
+
+
+
           </Grid.Column>
         </Grid>
       </Container>
