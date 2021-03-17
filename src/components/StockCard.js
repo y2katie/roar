@@ -39,7 +39,7 @@ const StockItem = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
           </Item.Content>
           <Item.Content extra>
             <Item.Description style={{marginLeft:"40px"}}>
-            <Item.Meta>Ticker: {stockProfile.ticker}</Item.Meta>
+            <Item.Meta><b>Ticker:</b> {stockProfile.ticker}</Item.Meta>
             <a href={stockProfile.weburl}> Visit Site </a> <br />
 
               <p> <b> About: </b> {companyInfo.description} </p>

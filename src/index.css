@@ -11,12 +11,33 @@ code {
 font-family: 'Montserrat', sans-serif !important;
 }
 
+.ui.items>.item>.content>.header, .ui.items>.item>.content>.description{
+  color:white;
+}
+
+.smallHeader {
+  font-size:14px;
+  font-weight:800 !important;
+  letter-spacing: 3.36px;
+  text-transform: uppercase;
+  color:#daff57 !important;
+}
+
 .testing {
   background-color: black !important;
 }
 h1,h3 {
-  color:#FF2AC2 !important;
+  color:#FF2AC2 ;
   font-weight:700;
+}
+
+.ui.animated.button {
+  background-color:#daff57;
+}
+
+a {
+    color: #daff57;
+    text-decoration: underline;
 }
 
 h2 {
@@ -68,14 +89,19 @@ padding: 20px;
   color:white;
 
 }
-.smallHeader {
-  font-size:14px;
-  font-weight:800 !important;
-  letter-spacing: 3.36px;
-  text-transform: uppercase;
-  color:#DAF7DC ;
+
+
+.ui.animated.button {
+  background-color:#FF5B5C !important;
 }
 
+.value {
+  color:#FF5B5C !important
+}
+
+.label {
+  color:white !important;
+}
 .ui.card {
   background:#000;
   box-shadow:0 1px 3px 0 #fe2bc2, 0 0 0 1px #d4d4d5
@@ -101,6 +127,7 @@ padding: 20px;
 
 .headLine {
   font-size:65px !important;
+  color:white !important;
 }
 
 .testing {

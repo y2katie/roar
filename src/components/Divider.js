@@ -53,5 +53,3 @@ const DividerExampleHorizontalTable = ({stockProfile}) => {
 
 )
 }
-
-export default DividerExampleHorizontalTable

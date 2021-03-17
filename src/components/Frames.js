@@ -47,7 +47,7 @@ const Frames = () => {
         cta = <Link to="/results"> Click </Link>
         />
       <h1>  <Route path="/results" component={Results}> Click </Route> </h1>
-        <ParticlesBg config={config} backgroundColor="black" color={["yellow", "#A51080","orange"]} type="circles" num={2} bg={true} className="testing"/>
+        <ParticlesBg config={config} backgroundColor="black" color={["yellow", "#A51080","orange"]} type="polygon" bg={true} className="testing"/>
       </div>
     );
 

@@ -10,12 +10,12 @@ import { Card, Image,Grid } from 'semantic-ui-react'
         <Card.Content> <h2> {hotties.standardName} </h2> </Card.Content>
           <Card.Content> <h4>Ticker:  {hotties.ticker} </h4> </Card.Content>
         <Card.Content description>
-        Exchange: <b> {hotties.exchange} </b><br />
+        <b> Exchange: </b> {hotties.exchange} <br />
         </Card.Content>
 
         <Card.Content extra>
-        Last Price: <b> ${hotties.lastPrice} </b> <br />
-        Price Change:<b> ${hotties.priceChange} </b>
+        <b>Last Price: </b> ${hotties.lastPrice} <br />
+        <b>Price Change:</b> ${hotties.priceChange} 
         </Card.Content>
       </Card>
        </Card>

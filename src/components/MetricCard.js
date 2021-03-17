@@ -16,30 +16,28 @@ import { Container, Header,Icon,Divider, Table } from 'semantic-ui-react'
       </Divider>      <Table celled padded>
     <Table.Header>
       <Table.Row>
-        <Table.HeaderCell singleLine>52 Week High</Table.HeaderCell>
-        <Table.HeaderCell>52 Week High Date</Table.HeaderCell>
-        <Table.HeaderCell>52 Week Low</Table.HeaderCell>
-        <Table.HeaderCell>52 Week Low Date</Table.HeaderCell>
-        <Table.HeaderCell>52 Week Price Return Daily</Table.HeaderCell>
+        <Table.HeaderCell><h3> 52 Week High </h3></Table.HeaderCell>
+        <Table.HeaderCell><h3>52 Week High Date</h3></Table.HeaderCell>
+        <Table.HeaderCell><h3>52 Week Low</h3></Table.HeaderCell>
+        <Table.HeaderCell><h3>52 Week Low Date</h3></Table.HeaderCell>
+        <Table.HeaderCell><h3>52 Week Price Return Daily</h3></Table.HeaderCell>
       </Table.Row>
     </Table.Header>
 
     <Table.Body>
       <Table.Row>
         <Table.Cell>
-          <Header as='h2' textAlign='center' >
-          ${selectedStock["52WeekHigh"]}
-          </Header>
+          <b> ${selectedStock["52WeekHigh"]} </b>
         </Table.Cell>
-        <Table.Cell singleLine> {selectedStock["52WeekHighDate"]} </Table.Cell>
+        <Table.Cell> <b> {selectedStock["52WeekHighDate"]} </b></Table.Cell>
         <Table.Cell>
-          {selectedStock["52WeekLow"]}
+        <b>   {selectedStock["52WeekLow"]} </b>
         </Table.Cell>
-        <Table.Cell textAlign='right'>
-          {selectedStock["52WeekLowDate"]}
+        <Table.Cell textAlign='left'>
+          <b> {selectedStock["52WeekLowDate"]} </b>
         </Table.Cell>
         <Table.Cell>
-          {selectedStock["52WeekPriceReturnDaily"]}
+          <b> {selectedStock["52WeekPriceReturnDaily"]} </b>
         </Table.Cell>
       </Table.Row>
 

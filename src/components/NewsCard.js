@@ -12,9 +12,8 @@ import { Grid, Card, Image, Item } from 'semantic-ui-react'
       style={{borderRadius:"10px"}} />
 
       <Item.Content>
-        <Item.Header>{news.headline}</Item.Header>
+        <Item.Header style={{textAlign:"left"}}>{news.headline}</Item.Header>
         <Item.Meta>
-          <span className='price'>{news.related}</span>
           <span className='stay'><a href={news.url}> Read More </a></span>
         </Item.Meta>
         <Item.Description>{news.summary.slice(0,500)+ "..."}</Item.Description>

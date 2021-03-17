@@ -35,36 +35,36 @@ import {Container, Button,Grid, Card, Image, Placeholder } from 'semantic-ui-rea
   </Placeholder>
 </Grid.Column>
 <Grid.Column width={3}>
-  <Placeholder>
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-  </Placeholder>
+<Placeholder inverted>
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted/>
+  <Placeholder.Line inverted/>
+</Placeholder>
 </Grid.Column>
 <Grid.Column width={3}>
-  <Placeholder>
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-  </Placeholder>
+<Placeholder inverted>
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted/>
+  <Placeholder.Line inverted/>
+</Placeholder>
 </Grid.Column>
 <Grid.Column width={3}>
-  <Placeholder>
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-  </Placeholder>
+<Placeholder inverted>
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted/>
+  <Placeholder.Line inverted/>
+</Placeholder>
 </Grid.Column>
 <Grid.Column width={3}>
-  <Placeholder>
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-  </Placeholder>
+<Placeholder inverted>
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted />
+  <Placeholder.Line inverted/>
+  <Placeholder.Line inverted/>
+</Placeholder>
 </Grid.Column>
 
           </>
