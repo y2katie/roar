@@ -26,12 +26,12 @@ import {Container, Button,Grid, Card, Image, Placeholder } from 'semantic-ui-rea
 
 {hotties.length > 0 ? <> {list} </> :
 <>
-<Grid.Column stackable width={3}>
-  <Placeholder>
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
-    <Placeholder.Line />
+<Grid.Column inverted stackable width={3}>
+  <Placeholder inverted>
+    <Placeholder.Line inverted />
+    <Placeholder.Line inverted />
+    <Placeholder.Line inverted/>
+    <Placeholder.Line inverted/>
   </Placeholder>
 </Grid.Column>
 <Grid.Column width={3}>

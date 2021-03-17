@@ -108,31 +108,33 @@ class Results extends React.Component {
 
   render() {
     return (
-      <Container stackable>
-        <Grid centered className="stackable" >
-          <Grid.Column>
-            <Navbar />
-            <HotStocks />
+      <Container fluid stackable>
+        <Grid centered className="stackable">
+        <Grid.Column>
+
+        <Navbar />
+        <HotStocks />
+
             <SearchBox onSubmit={this.onStockSelect} />
 
+
+            <Stockcard
+              stockProfile={this.state.stockProfile}
+              peers={this.state.peers}
+              quote={this.state.quote}
+              companyInfo={this.state.companyInfo}
+              onStockSelect={this.onStockSelect}
+              style={{ marginTop: "20px" }}
+            />
+            <QuoteCard
+              onStockSelect={this.onStockSelect}
+              quote={this.state.quote}
+              stockProfile={this.state.stockProfile}
+            />
             <Statistic
               trends={this.state.trends}
               stockProfile={this.state.stockProfile}
             />
-
-
-
-
-
-                    <Stockcard
-                      stockProfile={this.state.stockProfile}
-                      peers={this.state.peers}
-                      quote={this.state.quote}
-                      companyInfo={this.state.companyInfo}
-                      onStockSelect={this.onStockSelect}
-                      style={{ marginTop: "20px" }}
-                    />
-
 
             <MetricCard
               selectedStock={this.state.selectedStock}
@@ -144,9 +146,6 @@ class Results extends React.Component {
               onStockSelect={this.onStockSelect}
             />
 
-            <QuoteCard
-            onStockSelect={this.onStockSelect}
-            quote={this.state.trends} />
 
 
 

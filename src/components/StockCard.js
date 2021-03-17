@@ -41,7 +41,7 @@ const StockItem = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
             <Item.Meta>Ticker: {stockProfile.ticker}</Item.Meta>
             <a href={stockProfile.weburl}> Visit Site </a> <br />
 
-              <p> {companyInfo.description} </p>
+              <p> <b> About: </b> {companyInfo.description} </p>
 
               <Label>Industry: {companyInfo.industry} </Label>
               <Label style={{ marginTop: "5px" }}>
@@ -54,7 +54,7 @@ const StockItem = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
 
 
 
-          
+
           </Item.Group>
 
       </Container>

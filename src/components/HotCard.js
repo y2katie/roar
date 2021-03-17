@@ -8,10 +8,10 @@ import { Card, Image,Grid } from 'semantic-ui-react'
       <Card style={{marginTop:"20px"}}>
       <Card>
         <Card.Content header={hotties.standardName} />
+          <Card.Content header={hotties.ticker} />
         <Card.Content description>
         Ticker: {hotties.ticker} <br />
         Exchange: {hotties.exchange} <br />
-        Volume: {hotties.volume}
         </Card.Content>
 
         <Card.Content extra>
