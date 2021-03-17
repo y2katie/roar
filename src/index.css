@@ -14,13 +14,71 @@ font-family: 'Montserrat', sans-serif !important;
 .testing {
   background-color: black !important;
 }
+h1,h3 {
+  color:#FF2AC2 !important;
+  font-weight:700;
+}
 
+h2 {
+  color:white;
+}
+h4 {
+  color:#DAFF57
+}
+
+header {
+  font-weight:700;
+}
+
+h5,h6 {
+  color:#FF2AC2 !important;
+}
+
+.meta {
+  color:white !important;
+}
+
+.stockcard{
+  margin-top:40px;
+border-radius: 10px;
+padding: 20px;
+}
+
+.ui.label {
+  background-color:#FF5B5C !important;
+  color:white;
+}
+/* .header {
+  color:#FF5B5C !important
+} */
+.content, p {
+  color:white;
+}
+
+.ui .header {
+  color:#DAFF57
+}
+
+.ui.card>.content, .ui.cards>.card>.content {
+  border-top:1px solid #fff;
+
+}
+
+.ui.card>.extra, .ui.cards>.card>.extra {
+  color:white;
+
+}
 .smallHeader {
   font-size:14px;
   font-weight:800 !important;
   letter-spacing: 3.36px;
   text-transform: uppercase;
   color:#DAF7DC ;
+}
+
+.ui.card {
+  background:#000;
+  box-shadow:0 1px 3px 0 #fe2bc2, 0 0 0 1px #d4d4d5
 }
 
 .frames {

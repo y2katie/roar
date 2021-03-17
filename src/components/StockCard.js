@@ -5,6 +5,7 @@ import {
   Icon,
   Column,
   List,
+  Header,
   Button,
   Item,
   Grid,
@@ -26,12 +27,12 @@ const StockItem = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) =
   }
 
   return (
-    <Container>
+    <Container className="stockcard">
 
       <Item.Group divided centered style={{ marginTop: "20px", width:"80%", margin:"0 auto" }}>
         <Item>
           <Item.Content>
-            <h1>{stockProfile.name}</h1>
+            <Header size='huge' style={{color:"white"}}> {stockProfile.name} </Header>
              <h1> ${quote.open} </h1>
             <Item.Description>
             </Item.Description>

@@ -28,41 +28,56 @@ const QuoteCard = ({ stockProfile, onStockSelect, quote }) => {
 
   console.log(quote.open);
   return (
-    <Container style={{textAlign:"center"}}>
-    <List horizontal style={{textAlign:"center"}}>
-    <List.Item>
-    <h1> Quotes </h1>
-      <Image src={stockProfile.logo} size="mini" />
-      <List.Content>
-        <List>Open: ${quote.open} </List>
-      </List.Content>
+    <Container style={{ textAlign: "center" }}>
+      <List horizontal style={{ textAlign: "center" }}>
+        <List.Item>
+          <List.Content>
+            <List>
+              {" "}
+              <b>Open:</b> ${quote.open}{" "}
+            </List>
+          </List.Content>
+        </List.Item>
+        <List.Item>
+          <List.Content>
+            <List>
+              <b>Close:</b> ${quote.close}{" "}
+            </List>
+          </List.Content>
+        </List.Item>
+        <List.Item>
+          <List.Content>
+            <List>
+              <b> Volume:</b> ${quote.volume}
+            </List>
+          </List.Content>
+        </List.Item>
+        <List.Item>
+          <List.Content>
+            <List>
+            <b>  Low: </b> ${quote.low}{" "}
 
-    </List.Item>
-    <List.Item>
-    <Image src={stockProfile.logo} size="mini" />
+            </List>
+          </List.Content>
+        </List.Item>
+        <List.Item>
+          <List.Content>
+            <List>
+            <b>  Afterhours: </b> ${quote.afterHours}{" "}
 
-    <List.Content>
+            </List>
+          </List.Content>
+        </List.Item>
+        <List.Item>
+          <List.Content>
+            <List>
+            <b>  PreMarket: </b> ${quote.preMarket}{" "}
 
-      <List>Close: ${quote.close} </List>
-    </List.Content>
-    </List.Item>
-    <List.Item>
-      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/christian.jpg' />
-      <List.Content>
-        <List>Volume: ${quote.volume}
-      Low: ${quote.low} </List>
-      </List.Content>
-    </List.Item>
-    <List.Item>
-      <Image avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
-      <List.Content>
-        <List>Afterhours: ${quote.afterHours}
-        PreMarket: ${quote.preMarket}</List>
-      </List.Content>
-    </List.Item>
-  </List>
-  </Container>
-
+            </List>
+          </List.Content>
+        </List.Item>
+      </List>
+    </Container>
   );
 };
 

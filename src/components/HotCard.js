@@ -7,16 +7,15 @@ import { Card, Image,Grid } from 'semantic-ui-react'
     <Grid.Column stackable>
       <Card style={{marginTop:"20px"}}>
       <Card>
-        <Card.Content header={hotties.standardName} />
-          <Card.Content header={hotties.ticker} />
+        <Card.Content> <h2> {hotties.standardName} </h2> </Card.Content>
+          <Card.Content> <h4>Ticker:  {hotties.ticker} </h4> </Card.Content>
         <Card.Content description>
-        Ticker: {hotties.ticker} <br />
-        Exchange: {hotties.exchange} <br />
+        Exchange: <b> {hotties.exchange} </b><br />
         </Card.Content>
 
         <Card.Content extra>
-        Last Price: ${hotties.lastPrice} <br />
-        Price Change: ${hotties.priceChange}
+        Last Price: <b> ${hotties.lastPrice} </b> <br />
+        Price Change:<b> ${hotties.priceChange} </b>
         </Card.Content>
       </Card>
        </Card>
