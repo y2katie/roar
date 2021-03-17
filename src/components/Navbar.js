@@ -10,17 +10,14 @@ const Navbar = () => {
     </Link>
 
     <div class="right menu">
-    <Link to="/" class="item">
-      Home
-    </Link>
     <Link to="/carousel" class="item">
-      Carousel
+      Press
     </Link>
     <Link to="/faq" class="item">
       FAQ
     </Link>
     <Link to="/results" class="item">
-      Results
+      How It Works
     </Link>
 
 

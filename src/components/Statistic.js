@@ -66,6 +66,9 @@ const StatisticExampleEvenlyDivided = ({ trends,stockProfile }) => {
 
 
       </Statistic.Group>
+      <Divider horizontal>
+      </Divider>
+
 
   </Container>
 

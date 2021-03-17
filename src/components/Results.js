@@ -20,7 +20,7 @@ import QuoteCard from "./QuoteCard";
 
 import Test from "./Test";
 import Peers from "./Peers";
-import Bigsearch from "./Bigsearch"
+import HotStocks from "./HotStocks";
 
 import Statistic from "./Statistic";
 import DividerExampleHorizontalTable from "./Divider";
@@ -43,6 +43,7 @@ class Results extends React.Component {
     prices: [],
     quote: "",
     companyInfo: "",
+    hotStocks: [],
   };
 
   contextRef = createRef();
@@ -108,18 +109,19 @@ class Results extends React.Component {
   render() {
     return (
       <Container>
-        <Grid centered className="stackable" columns={2}>
+        <Grid centered className="stackable" >
           <Grid.Column>
             <Navbar />
-            <SearchBox
-              onSubmit={this.onStockSelect}
-              onClick={this.handleLoadingClick}
+            <HotStocks />
+            <SearchBox onSubmit={this.onStockSelect} />
+
+            <Statistic
+              trends={this.state.trends}
+              stockProfile={this.state.stockProfile}
             />
 
             {this.state.stockProfile ? (
-              <Ref innerRef={this.contextRef} stackable>
-                <Rail position="left">
-                  <Sticky context={this.contextRef} pushing>
+
                     <Stockcard
                       stockProfile={this.state.stockProfile}
                       peers={this.state.peers}
@@ -128,9 +130,7 @@ class Results extends React.Component {
                       onStockSelect={this.onStockSelect}
                       style={{ marginTop: "20px" }}
                     />
-                  </Sticky>
-                </Rail>
-              </Ref>
+
             ) : (
               <Card.Group itemsPerRow={3} style={{ marginTop: "30px" }}>
                 <Card>
@@ -169,12 +169,6 @@ class Results extends React.Component {
               </Card.Group>
             )}
 
-            <Bigsearch />
-
-            <Statistic
-              trends={this.state.trends}
-              stockProfile={this.state.stockProfile}
-            />
 
             <MetricCard
               selectedStock={this.state.selectedStock}
@@ -187,18 +181,12 @@ class Results extends React.Component {
               onStockSelect={this.onStockSelect}
             />
 
-            <Ref innerRef={this.contextRef} stackable>
-              <Rail position="right">
-                <Sticky context={this.contextRef} pushing>
-                  <QuoteCard
-                    stockProfile={this.state.stockProfile}
-                    quote={this.state.quote}
-                    onStockSelect={this.onStockSelect}
-                    style={{ marginTop: "20px" }}
-                  />
-                </Sticky>
-              </Rail>
-            </Ref>
+            <QuoteCard
+              stockProfile={this.state.stockProfile}
+              quote={this.state.quote}
+              onStockSelect={this.onStockSelect}
+              style={{ marginTop: "20px" }}
+            />
           </Grid.Column>
         </Grid>
       </Container>
