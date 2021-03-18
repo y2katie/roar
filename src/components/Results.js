@@ -8,6 +8,7 @@ import SearchBox from "./SearchBox";
 import Stockcard from "./StockCard";
 import StockNews from "./StockNews";
 import QuoteCard from "./QuoteCard";
+import Bigsearch from "./Bigsearch";
 
 import HotStocks from "./HotStocks";
 import Statistic from "./Statistic";
@@ -31,9 +32,29 @@ class Results extends React.Component {
     quote: "",
     companyInfo: "",
     hotStocks: [],
+    testing:[]
   };
 
   contextRef = createRef();
+
+
+  testingSearch = async(stock,value) => {
+    console.log(stock, "stock");
+    console.log(value, "value");
+
+    await axios.get('https://morning-star.p.rapidapi.com/market/v2/auto-complete', {
+      params: {q:`${stock}`},
+      headers: {
+          'x-rapidapi-key': `${process.env.REACT_APP_MORNING_STAR}`,
+          'x-rapidapi-host': 'morning-star.p.rapidapi.com'
+        }
+      })
+      .then( (response) => {
+        console.log(response.data);
+      this.setState({testing:response.data});
+
+      })
+  }
 
   onStockSelect = async (stock, symbol) => {
     console.log(stock);
@@ -102,7 +123,8 @@ class Results extends React.Component {
         <Navbar />
         <HotStocks />
 
-            <SearchBox onSubmit={this.onStockSelect} />
+
+            <SearchBox onSubmit={this.onStockSelect} onChange={this.testingSearch} />
 
 
             <Stockcard

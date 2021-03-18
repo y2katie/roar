@@ -16,6 +16,8 @@ class Bigsearch extends React.Component {
         data:[]
     };
 
+  
+
     componentDidMount() {
         axios.get(`https://finnhub.io/api/v1/stock/symbol?currency=USD&${
           process.env.REACT_APP_API_KEY
