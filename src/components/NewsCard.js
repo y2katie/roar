@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Card, Image, Item } from 'semantic-ui-react'
+import { Item } from 'semantic-ui-react'
 
   const NewsCard = ({news}) => {
     return (

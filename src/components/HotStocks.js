@@ -1,6 +1,6 @@
 import React from "react";
 import Hotties from "./Hotties";
-import { Container, Button, Grid, Image } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 
 import axios from "axios";
 
@@ -18,7 +18,7 @@ class HotStocks extends React.Component {
         },
       })
       .then((response) => {
-        this.setState({ hotties: response.data.actives.slice(0, 5) });
+        this.setState({ hotties: response.data.actives });
       });
   }
 

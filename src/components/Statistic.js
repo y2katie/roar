@@ -1,10 +1,7 @@
 import React from "react";
 import {
   Icon,
-  Image,
   Statistic,
-  Rail,
-  Sticky,
   Container,
   Divider,
   Header,

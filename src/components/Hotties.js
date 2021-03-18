@@ -1,6 +1,6 @@
 import React from "react";
 import HotCard from "./HotCard"
-import {Container, Button,Grid, Card, Image, Placeholder } from 'semantic-ui-react'
+import {Container,Grid, Placeholder } from 'semantic-ui-react'
 
   const Hotties = ({hotties}) => {
     if (!hotties) {
@@ -26,7 +26,7 @@ import {Container, Button,Grid, Card, Image, Placeholder } from 'semantic-ui-rea
 
 {hotties.length > 0 ? <> {list} </> :
 <>
-<Grid.Column inverted stackable width={3}>
+<Grid.Column inverted stackable>
   <Placeholder inverted>
     <Placeholder.Line inverted />
     <Placeholder.Line inverted />

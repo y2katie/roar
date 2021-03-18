@@ -1,12 +1,14 @@
 import React from 'react'
+import {
+  Icon
+} from "semantic-ui-react";
 import { Link }  from "react-router-dom"
-import guru from "../assets/images/guru.png"
 
 const Navbar = () => {
   return (
     <div class="ui secondary menu topMenu stackable">
     <Link to= "/" class='item'>
-      <img className="logo" src= {guru} alt="logo" />
+       <h2 style={{fontWeight:"700"}}> <Icon name="pin" />TickerTok </h2>
     </Link>
 
     <div class="right menu">

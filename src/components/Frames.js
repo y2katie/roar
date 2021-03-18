@@ -1,11 +1,9 @@
 import React from "react";
 import ParticlesBg from "particles-bg";
 import Copy from "./Copy";
-import Results from "./Results";
 
 import Navbar from "./Navbar";
 import { Link }  from "react-router-dom"
-import { Route }  from "react-router-dom"
 
 
 const Frames = () => {
@@ -44,7 +42,7 @@ const Frames = () => {
         smallHeader=  "when it comes to building wealth, investing is how you do it"
         headLine= "The Topic of Investing Can be Intimidating."
         body = "Complex financial terms, market swings and varying opinions from friends, family, and on social media can make anyone shy away from creating an investment portfolio."
-        cta = <Link to="/results">  Let's Show You How It Works </Link>
+        cta = <Link to="/results" style={{color:"white", textDecoration:"none"}}>  Let's Show You How It Works </Link>
         />
         <ParticlesBg config={config} backgroundColor="black" color={["yellow", "#A51080","orange"]} type="polygon" bg={true} className="testing"/>
       </div>

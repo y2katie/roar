@@ -2,24 +2,10 @@ import React from "react";
 import {
   Container,
   Label,
-  Icon,
-  Column,
-  List,
   Header,
-  Button,
-  Item,
-  Grid,
-  Image,
-  Form,
-  Divider,
-  Segment,
-  Sticky,
-  Rail,
+  Item
 } from "semantic-ui-react";
 
-const paragraph = (
-  <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
-);
 
 const StockItem = ({ stockProfile, peers, onStockSelect, companyInfo, quote }) => {
   if (!stockProfile || !companyInfo || !quote || !peers) {

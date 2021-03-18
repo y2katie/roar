@@ -1,25 +1,9 @@
 import React from "react";
 import {
   Container,
-  Item,
-  Label,
-  Icon,
-  Column,
-  List,
-  Button,
-  Card,
-  Grid,
-  Image,
-  Form,
-  Divider,
-  Segment,
-  Sticky,
-  Rail,
+  List
 } from "semantic-ui-react";
 
-const paragraph = (
-  <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
-);
 
 const QuoteCard = ({ stockProfile, onStockSelect, quote }) => {
   if (!stockProfile || !quote) {

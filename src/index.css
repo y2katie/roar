@@ -225,7 +225,6 @@ padding: 20px;
 .faqHeader {
   font-size:60px;
   text-align:left;
-  color:#DAF7DC;
   border-top:1px solid white;
 }
 
@@ -256,5 +255,9 @@ padding: 20px;
 @media(max-width:767px){
   .headLine {
     font-size:25px !important;
+  }
+
+  .faqHeader{
+    font-size:40px;
   }
 }

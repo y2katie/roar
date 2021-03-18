@@ -1,29 +1,16 @@
-import React, { Component, createRef } from "react";
-import _ from "lodash";
+import React, { createRef } from "react";
 
 import {
   Grid,
-  Header,
-  Image,
-  Rail,
-  Ref,
-  Segment,
-  Sticky,
-  Container,
-  Card,
-  Placeholder,
+  Container
 } from "semantic-ui-react";
 import SearchBox from "./SearchBox";
 import Stockcard from "./StockCard";
 import StockNews from "./StockNews";
 import QuoteCard from "./QuoteCard";
 
-import Test from "./Test";
-import Peers from "./Peers";
 import HotStocks from "./HotStocks";
-
 import Statistic from "./Statistic";
-import DividerExampleHorizontalTable from "./Divider";
 
 import MetricCard from "./MetricCard";
 

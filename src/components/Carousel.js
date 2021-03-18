@@ -2,9 +2,15 @@ import React from "react";
 import AliceCarousel from 'react-alice-carousel';
 import Navbar from "./Navbar"
 import CopyLeftImage from "./CopyLeftImage"
+import {
+  Container
+} from "semantic-ui-react";
 import CopyRightImage from "./CopyRightImage"
-
 import 'react-alice-carousel/lib/alice-carousel.css';
+import jeff from "../assets/images/jeff.png"
+import wolf from "../assets/images/wolf.png"
+
+
 
 const responsive = {
     0: { items: 1 },
@@ -14,41 +20,43 @@ const responsive = {
 
 const items = [
     <div className="item multiple" data-value="1">
-      <h2 style={{color:"white"}}>
-        KATIE
+      <h4 style={{color:"white"}}> "Price is what you pay. Value is what you get. Use TickerTok"</h4>
+      <h2 style={{color:"#DAFF57"}}>
+        Warren Buffet
       </h2>
-      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    </div>,
+
+    <div className="item multiple" data-value="6">
+    <h4 style={{color:"white"}}> " I am a bot. Use TickerTok"</h4>
+    <h2 style={{color:"#DAFF57"}}>
+      Mark Zuckerberg
+    </h2>
+
     </div>,
     <div className="item multiple" data-value="2">
-      <h2 style={{color:"blue"}}>
-        KATIE
-      </h2>
-      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    <h4 style={{color:"white"}}> "Life is not fair; get used to it. Use TickerTok"</h4>
+    <h2 style={{color:"#DAFF57"}}>
+      Bill Gates
+    </h2>
     </div>,
     <div className="item multiple" data-value="3">
-      <h2 style={{color:"red"}}>
-        KATIE
-      </h2>
-      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    <h4 style={{color:"white"}}> "When something is important enough, you do it even if the odds are not in your favor. Use TickerTok"</h4>
+    <h2 style={{color:"#DAFF57"}}>
+      Elon Musk
+    </h2>
     </div>,
     <div className="item multiple" data-value="4">
-      <h2 style={{color:"yellow"}}>
-        KATIE
-      </h2>
-      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    <h4 style={{color:"white"}}> " All that we are arises with our thoughts. With our thoughts, we make the world. Use TickerTok"</h4>
+    <h2 style={{color:"#DAFF57"}}>
+    The Buddha
+    </h2>
     </div>,
 
     <div className="item multiple" data-value="5">
-      <h2 style={{color:"orange"}}>
-        KATIE
-      </h2>
-      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
-    </div>,
-    <div className="item multiple" data-value="6">
-      <h2 style={{color:"purple"}}>
-        KATIE
-      </h2>
-      <p style={{color:"white"}}> Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!</p>
+    <h4 style={{color:"white"}}> " Resentment is like drinking poison and then hoping it will kill your enemies. Use TickerTok"</h4>
+    <h2 style={{color:"#DAFF57"}}>
+      Nelson Mandela
+    </h2>
     </div>
 ];
 
@@ -56,7 +64,8 @@ const items = [
 const Carousel = () => (
   <div>
     <Navbar />
-    <h1 style={{color:"purple", fontSize:"70px"}}> Loved by industry leaders </h1>
+    <Container>
+    <h1> Press </h1>
     <AliceCarousel
         autoPlay
         mouseTracking
@@ -65,17 +74,20 @@ const Carousel = () => (
         responsive={responsive}
     />
    <CopyLeftImage
-     header="Delivery Optimizations"
+     header="Learn From The Master"
      followUp="Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!"
-     sellingPointImage = "https://images.pexels.com/photos/3119736/pexels-photo-3119736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+     sellingPointImage = {jeff}
     />
   <CopyRightImage
-    header="Delivery Optimizations"
+    header="Finance 101"
     followUp="Here are some extra resources that may be useful to you!Here are some extra resources that may be useful to you!"
-    sellingPointImage = "https://images.pexels.com/photos/3119736/pexels-photo-3119736.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    sellingPointImage = {wolf}
    />
+   </Container>
    </div>
 )
+
+
 
 
 
