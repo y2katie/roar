@@ -1,6 +1,5 @@
 import React from "react";
 import { Form, Input } from "semantic-ui-react";
-import axios from "axios";
 // import Information from "./Stocks.json"
 
 class SearchBox extends React.Component {
@@ -29,8 +28,8 @@ class SearchBox extends React.Component {
           onSearchChange={this.handleChange}
           placeholder="Enter ticker here"
           onSubmit={this.onFormSubmit}
-          style={{ textTransform: "uppercase" }}
-          style={{ textAlign: "center", marginTop: "30px" }}
+          style={{ textTransform: "uppercase",textAlign: "center", marginTop: "30px" }}
+        
         >
           <Input
             size="large"

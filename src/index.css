@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
 body {
   margin: 0;
-  background-color:black;
+  background-color:black !important;
   font-family: 'Open Sans', serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,6 +13,12 @@ font-family: 'Montserrat', sans-serif !important;
 
 .ui.items>.item>.content>.header, .ui.items>.item>.content>.description{
   color:white;
+}
+
+
+
+.bg-dark {
+  background-color:black !important;
 }
 
 .ui.table .thead .th h3  {
@@ -259,5 +265,17 @@ padding: 20px;
 
   .faqHeader{
     font-size:40px;
+  }
+
+  .copy {
+    margin: 0;
+    position: absolute;
+    width:95%;
+    top: 50%;
+    left: 50%;
+    padding:40px;
+    color:white;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import ParticlesBg from "particles-bg";
 import Copy from "./Copy";
 
-import Navbar from "./Navbar";
+import Header from "./Navbar";
 import { Link }  from "react-router-dom"
 
 
@@ -37,7 +37,7 @@ const Frames = () => {
 
     return (
       <div className="stackable" stackable>
-      <Navbar />
+      <Header />
       <Copy
         smallHeader=  "when it comes to building wealth, investing is how you do it"
         headLine= "The Topic of Investing Can be Intimidating."

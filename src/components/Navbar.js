@@ -1,40 +1,41 @@
 import React from "react";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+import "bootstrap/dist/css/bootstrap.min.css";
+
+export default function Header() {
   return (
-    <div class="ui secondary menu topMenu stackable">
+    <Navbar collapseOnSelect expand="lg" style={{backgroundColor:"black"}} variant="dark">
+      <Navbar.Brand href="#home">
+
       <Link to="/" class="item">
-        <h2 style={{ fontWeight: "700" }}>
-          {" "}
-          <Icon name="pin" />
-          TickerTok{" "}
-        </h2>
+          <h2 style={{ fontWeight: "700" }}>
+            {" "}
+            <Icon name="pin" />
+            TickerTok{" "}
+          </h2>
+        </Link>
+
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{color:"white"}} />
+      <Navbar.Collapse id="responsive-navbar-nav" style={{color:"white"}} >
+        <Nav className="mr-auto">
+
+        </Nav>
+        <Nav  >
+        <Link to="/carousel" class="item" style={{color:"white", padding:"15px"}} >
+        Press
       </Link>
-
-      <div class="right menu">
-        <Link to="/carousel" class="item">
-          Press
-        </Link>
-        <Link to="/faq" class="item">
-          FAQ
-        </Link>
-        <Link to="/results" class="item">
-          How It Works
-        </Link>
-
-        <div class="item">
-          <div class="ui animated button" tabindex="0">
-            <div class="visible content"> Learn More </div>
-            <div class="hidden content">
-              <i class="right arrow icon"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <Link to="/faq" class="item" style={{color:"white", padding:"15px"}}>
+        FAQ
+      </Link>
+      <Link to="/results" class="item" style={{color:"white", padding:"15px"}}>
+        How It Works
+      </Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
-};
-
-export default Navbar;
+}
